@@ -9,18 +9,9 @@ const header = () => {
 
     pushDataMain.textContent = headerListLinkActive.dataset.link;
 
-    const activeLinkHeader = (event) => {
-        // console.log(event.target);
-        if (event.target === event.currentTarget) {
-            return
-        } else {
-            let headerListLinkActive = document.querySelector('.header__list-li-linkActive');
-            headerListLinkActive && headerListLinkActive.classList.remove('header__list-li-linkActive');
-            event.target.parentNode.classList.add('header__list-li-linkActive');
-            pushDataMain.textContent = headerListLinkActive.dataset.link;
-        }
-    }
-    headerList.addEventListener('click', activeLinkHeader);
+    headerList.addEventListener('click', (event) => {
+        pushDataMain.textContent = event.target.getAttribute('data-link');
+    });
 }
 
 export default header;

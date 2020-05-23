@@ -40,7 +40,7 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
-.header__list-li-linkActive { /*hover*/
+.header__list-li a:hover { /*hover*/
     border-bottom: 2px solid;
     background: linear-gradient(to right, rgb(255, 94, 0) 40%, rgb(255, 209, 7));
     -webkit-background-clip: text;

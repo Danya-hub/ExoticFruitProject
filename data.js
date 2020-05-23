@@ -1,6 +1,6 @@
 'use strict';
 
-const fruit = [{ //1
+export const fruit = [{ //1
         id: 1,
         photoProduct: './assets/fruits/durain.jpg',
         title: 'Дуриан (Durian)',
@@ -206,11 +206,11 @@ const fruit = [{ //1
     }
 ]
 
-const fruitStockIncludes = () => {
+export const fruitStockIncludes = () => {
     fruit.filter(item => item.stock);
 };
 
-const fruitSet = [{ //1
+export const fruitSet = [{ //1
         id: 1,
         photoProduct: './assets/fruitSets/bigBoss.jpg',
         title: 'Фруктовый набор "BIG BOSS"',
@@ -287,6 +287,6 @@ const fruitSet = [{ //1
     }
 ]
 
-const fruitSetStockIncludes = () => {
+export const fruitSetStockIncludes = () => {
     fruitSet.filter(item => item.stock);
 };
