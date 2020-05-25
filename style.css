@@ -33,14 +33,15 @@ body {
     height: 60px;
 }
 
-.header__list-li a { 
+.header__list-li a {
     font: 100 18px 'FuturaPT-Medium';
     background: linear-gradient(to right, rgb(0, 175, 0) 10%, rgb(0, 224, 0));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.header__list-li a:hover { /*hover*/
+.header__list-li a:hover,
+.header__list-li a:focus {
     border-bottom: 2px solid;
     background: linear-gradient(to right, rgb(255, 94, 0) 40%, rgb(255, 209, 7));
     -webkit-background-clip: text;
