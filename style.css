@@ -145,3 +145,11 @@ body {
         height: 50px;
     }
 }
+
+.aboutPage {
+    display: none;
+}
+
+.aboutPageActive {
+    display: block;
+}
