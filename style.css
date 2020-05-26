@@ -76,6 +76,7 @@ img {
     border: none;
     background: none;
     outline: none;
+    cursor: pointer;
 }
 
 .header__hamburgerMenu-img {
@@ -103,11 +104,6 @@ img {
     .header__logo-img {
         width: 165px;
         height: 45px;
-    }
-
-    .header__hamburgerMenu-img {
-        width: 30px;
-        height: 30px;
     }
 }
 
@@ -243,6 +239,17 @@ img {
     -webkit-box-shadow: 1px 1px 35px -22px rgba(0,0,0,0.75);
     -moz-box-shadow: 1px 1px 35px -22px rgba(0,0,0,0.75);
     box-shadow: 1px 1px 35px -22px rgba(0,0,0,0.75);
+}
+
+@media (max-width:768px) {
+    .groceryCards__list-item {
+        transition-duration: unset;
+    }
+
+    .groceryCards__list-item:hover {
+        transform: unset;
+        box-shadow: unset;
+    }
 }
 
 .groceryCards__list-item-title {
