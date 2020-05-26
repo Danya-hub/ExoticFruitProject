@@ -24,7 +24,10 @@ const header = () => {
                     <img src="${item.photoProduct}" class="groceryCards__list-item-block-img">
                 </div>
                 <div>
-                    <p class="groceryCards__list-item-price">${item.price}$/${((item.category === 'fruit') || (item.category === 'berries'))?'pcs':'kg'}</p>
+                    <p class="groceryCards__list-item-price">
+                        <span class="groceryCards__list-item-price-span">${item.price}$/${((item.category === 'fruit') || (item.category === 'berries'))?'pcs':'kg'}</span>
+                        <span class="groceryCards__list-item-stock-span">${item.stock}$/${((item.category === 'fruit') || (item.category === 'berries'))?'pcs':'kg'}</span>
+                    </p>
                     <button class="groceryCards__list-item-button">
                         <img src="./components/header/assets/logo/cart.svg" alt="картинка" class="groceryCards__list-item-button-img">
                     </button>
