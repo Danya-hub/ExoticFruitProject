@@ -18,16 +18,17 @@
             <nav class="navigation">
                 <ul class="header__list">
                     <li class="header__list-li">
-                        <a href="#" data-link="fruit" class="header__list-li-link header__list-li-linkActive">Фрукты</a>
+                        <a href="#" data-link="fruit"
+                            class="header__list-item-linkFruit header__list-item-linkActive">Фрукты</a>
                     </li>
                     <li class="header__list-li">
-                        <a href="#" data-link="fruitSet" class="header__list-li-link">Фруктовый набор</a>
-                    </li>
-                    <li class="header__list-li" data-link="berries">
-                        <a href="#" class="header__list-li-link">Ягоды</a>
+                        <a href="#" data-link="fruitSet" class="header__list-item-linkFruitSet">Фруктовый набор</a>
                     </li>
                     <li class="header__list-li">
-                        <a href="#" data-link="about" class="header__list-li-link">О проекте</a>
+                        <a href="#" data-link="berries" class="header__list-item-linkBerries">Ягоды</a>
+                    </li>
+                    <li class="header__list-li">
+                        <a href="#" data-link="about" class="header__list-item-linkProject">О проекте</a>
                     </li>
                 </ul>
             </nav>
@@ -57,14 +58,27 @@
     </header>
     <main>
         <section class="groceryCards">
-            <div class="groceryCards__menu">
-                <h2 class="groceryCards__menu-title">Меню</h2>
+            <div>
+                <div class="groceryCards__menu">
+                    <h2 class="groceryCards__menu-title">Меню</h2>
+                    <ul class="groceryCards__menu-listFunction">
+                        <li class="groceryCards__menu-listFunction-item">
+                            <span class="groceryCards__menu-listFunction-item-text">Скидки</span>
+                        </li>
+                        <li class="groceryCards__menu-listFunction-item">
+                            <span class="groceryCards__menu-listFunction-item-text">Максимальные цены</span>
+                        </li>
+                        <li class="groceryCards__menu-listFunction-item">
+                            <span class="groceryCards__menu-listFunction-item-text">Минимальные цены</span>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="groceryCards__list">
+                    <!-- cards -->
+                </ul>
             </div>
-            <ul class="groceryCards__list">
-                <!-- cards -->
-            </ul>
-            <div class="aboutPage">
-                <p class="aboutPage__text">about</p>
+            <div class="groceryCards__aboutPage">
+                <p class="groceryCards__aboutPage-text">about</p>
                 <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nemo laboriosam eveniet illo
                     temporibus exercitationem nobis molestiae autem mollitia quasi.</h2>
             </div>

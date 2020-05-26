@@ -2,18 +2,19 @@
 
 import {
     fruit,
-    fruitSet
+    fruitSet,
+    berries
 } from "../../data.js";
 
 const header = () => {
     const headerList = document.querySelector('.header__list'); //ul
     const headerListLinkActive = document.querySelector('.header__list-li-linkActive'); //a
     const groceryCardsList = document.querySelector('.groceryCards__list'); //ul
-    const aboutPage = document.querySelector('.aboutPage');
+    const aboutPage = document.querySelector('.groceryCards__aboutPage'); //div
+    const groceryCardsMenu = document.querySelector('.groceryCards__menu'); //div
 
     const getMarkup = (array) => {
         // console.dir(array);
-        
         let markup = '';
         for (const item of array) {
             markup += `
@@ -36,7 +37,8 @@ const header = () => {
     groceryCardsList.innerHTML = getMarkup(fruit);
 
     const linkActiveMain = (e) => {
-        aboutPage.classList.remove('aboutPageActive');
+        aboutPage.classList.remove('groceryCards__aboutPageActive');
+        groceryCardsMenu.classList.add('groceryCards__menuActive');
         if (e.target === e.currentTarget) {
             return
         } else {
@@ -47,8 +49,12 @@ const header = () => {
                 case 'fruitSet':
                     groceryCardsList.innerHTML = getMarkup(fruitSet);
                     break;
+                case 'berries':
+                    groceryCardsList.innerHTML = getMarkup(berries);
+                    break;
                 case 'about':
-                    aboutPage.classList.add('aboutPageActive');
+                    aboutPage.classList.add('groceryCards__aboutPageActive');
+                    groceryCardsMenu.classList.remove('groceryCards__menuActive');
                     groceryCardsList.innerHTML = '';
                     break;
                 default:
