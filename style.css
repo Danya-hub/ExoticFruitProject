@@ -236,9 +236,9 @@ img {
 
 .groceryCards__list-item:hover {
     transform: scale(1.05);
-    -webkit-box-shadow: 1px 1px 35px -22px rgba(0,0,0,0.75);
-    -moz-box-shadow: 1px 1px 35px -22px rgba(0,0,0,0.75);
-    box-shadow: 1px 1px 35px -22px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 1px 35px -22px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 1px 35px -22px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 1px 35px -22px rgba(0, 0, 0, 0.75);
 }
 
 .groceryCards__list-item-title {
@@ -303,26 +303,13 @@ img {
     display: block;
 }
 
-@media (max-width: 425px) {
-    .groceryCards__list-item {
-        border-bottom: 2px solid black;
-        border-radius: unset;
-        padding-bottom: 21px;
-    }
-
-    .groceryCards__list-item:last-child {
-        padding-bottom: 0;
-        border-bottom: unset;
-    }
-}
-
 @media (min-width: 450px) {
     .groceryCards__list {
         margin: 0 10px;
     }
 }
 
-@media (max-width:768px) {
+@media (max-width:679px) {
     .groceryCards__list-item {
         transition-duration: unset;
     }
@@ -330,6 +317,17 @@ img {
     .groceryCards__list-item:hover {
         transform: unset;
         box-shadow: unset;
+    }
+
+    .groceryCards__list-item {
+        border-bottom: 2px solid black;
+        border-radius: unset;
+        padding-bottom: 21px;
+    }
+
+    .groceryCards__list-item:last-child {
+        border-bottom: unset;
+        padding-bottom: 0;
     }
 }
 
