@@ -241,17 +241,6 @@ img {
     box-shadow: 1px 1px 35px -22px rgba(0,0,0,0.75);
 }
 
-@media (max-width:768px) {
-    .groceryCards__list-item {
-        transition-duration: unset;
-    }
-
-    .groceryCards__list-item:hover {
-        transform: unset;
-        box-shadow: unset;
-    }
-}
-
 .groceryCards__list-item-title {
     font: 100 13px 'FuturaPT-Heavy';
     text-align: center;
@@ -314,9 +303,33 @@ img {
     display: block;
 }
 
+@media (max-width: 425px) {
+    .groceryCards__list-item {
+        border-bottom: 2px solid black;
+        border-radius: unset;
+        padding-bottom: 21px;
+    }
+
+    .groceryCards__list-item:last-child {
+        padding-bottom: 0;
+        border-bottom: unset;
+    }
+}
+
 @media (min-width: 450px) {
     .groceryCards__list {
         margin: 0 10px;
+    }
+}
+
+@media (max-width:768px) {
+    .groceryCards__list-item {
+        transition-duration: unset;
+    }
+
+    .groceryCards__list-item:hover {
+        transform: unset;
+        box-shadow: unset;
     }
 }
 
