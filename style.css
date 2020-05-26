@@ -10,6 +10,16 @@ body {
     user-select: none;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 /* ----------======= header =======---------- */
 
 .header {
@@ -62,6 +72,10 @@ body {
     display: none;
 }
 
+.header__hamburgerMenu {
+    border: none;
+    background: none;
+}
 
 .header__hamburgerMenu-img {
     width: 40px;
@@ -72,6 +86,12 @@ body {
     width: 40px;
     height: 40px;
     cursor: pointer;
+}
+
+.header>div:nth-child(n+4) button {
+    border: none;
+    background: none;
+    outline: none;
 }
 
 @media (max-width: 370px) {
@@ -98,7 +118,7 @@ body {
     }
 }
 
-@media (min-width: 1050px) {
+@media (min-width: 1100px) {
     .header>div:not(.header__logo):not(.header__hamburgerMenu) {
         display: flex;
         justify-content: space-between;
@@ -106,6 +126,10 @@ body {
 
     .header>div:nth-child(n+3) {
         width: 110px;
+    }
+
+    .header__list {
+        width: 500px;
     }
 
     .header__hamburgerMenu {
@@ -146,10 +170,79 @@ body {
     }
 }
 
+/* ----------======= groceryCards =======---------- */
+
 .aboutPage {
     display: none;
 }
 
 .aboutPageActive {
     display: block;
+}
+
+.groceryCards {
+    margin: 30px 0;
+}
+
+.groceryCards__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 200px));
+    grid-gap: 30px;
+    justify-content: center;
+    max-width: 1000px;
+    margin-left: auto;
+}
+
+.groceryCards__list-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffff;
+    border-radius: 10px;
+    height: 265px;
+    transition-duration: 1000ms;
+}
+
+.groceryCards__list-item:hover {
+    transform: scale(1.05);
+    -webkit-box-shadow: 1px 1px 35px -22px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 35px -22px rgba(0,0,0,0.75);
+    box-shadow: 1px 1px 35px -22px rgba(0,0,0,0.75);
+}
+
+.groceryCards__list-item-title {
+    font: 100 13px 'FuturaPT-Heavy';
+    text-align: center;
+}
+
+.groceryCards__list-item-block-img {
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.groceryCards__list-item-price {
+    font: 600 13px 'FuturaPT-Light';
+}
+
+.groceryCards__list-item-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.groceryCards__list-item-button-img {
+    width: 30px;
+    height: 30px;
+}
+
+.groceryCards__list-item>div+div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.groceryCards__menu {
+    position: fixed;
 }

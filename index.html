@@ -12,62 +12,61 @@
 <body>
     <header>
         <section class="header">
-            <div class="header__logo">
+            <a href="#" class="header__logoLink">
                 <img src="./assets/logo/logoProject.svg" alt="картинка" class="header__logo-img">
-            </div>
-            <ul class="header__list">
-                <li class="header__list-li">
-                    <a href="#" data-link="fruit" class="header__list-li-link header__list-li-linkActive">Фрукты</a>
-                </li>
-                <li class="header__list-li">
-                    <a href="#" data-link="fruitSet" class="header__list-li-link">Фруктовый набор</a>
-                </li>
-                <li class="header__list-li" data-link="berries">
-                    <a href="#" class="header__list-li-link">Ягоды</a>
-                </li>
-                <li class="header__list-li">
-                    <a href="#" data-link="about" class="header__list-li-link">О проекте</a>
-                </li>
-            </ul>
+            </a>
+            <nav class="navigation">
+                <ul class="header__list">
+                    <li class="header__list-li">
+                        <a href="#" data-link="fruit" class="header__list-li-link header__list-li-linkActive">Фрукты</a>
+                    </li>
+                    <li class="header__list-li">
+                        <a href="#" data-link="fruitSet" class="header__list-li-link">Фруктовый набор</a>
+                    </li>
+                    <li class="header__list-li" data-link="berries">
+                        <a href="#" class="header__list-li-link">Ягоды</a>
+                    </li>
+                    <li class="header__list-li">
+                        <a href="#" data-link="about" class="header__list-li-link">О проекте</a>
+                    </li>
+                </ul>
+            </nav>
             <div class="header__socialNetworks">
-                <div class="header__socialNetworks-logo">
-                    <a href="#" class="header__socialNetworks-logo-link">
-                        <img src="./assets/logo/instagram.svg" alt="картинка"
-                            class="header__socialNetworks-logo-link-img">
-                    </a>
-                </div>
-                <div class="header__socialNetworks-logo">
-                    <a href="#" class="header__socialNetworks-logo-link">
-                        <img src="./assets/logo/facebook.svg" alt="картинка"
-                            class="header__socialNetworks-logo-link-img">
-                    </a>
-                </div>
-                <div class="header__socialNetworks-logo">
-                    <a href="#" class="header__socialNetworks-logo-link">
-                        <img src="./assets/logo/twitter.svg" alt="картинка"
-                            class="header__socialNetworks-logo-link-img">
-                    </a>
-                </div>
+                <a href="#" class="header__socialNetworks-logo-link">
+                    <img src="./assets/logo/instagram.svg" alt="картинка" class="header__socialNetworks-logo-link-img">
+                </a>
+                <a href="#" class="header__socialNetworks-logo-link">
+                    <img src="./assets/logo/facebook.svg" alt="картинка" class="header__socialNetworks-logo-link-img">
+                </a>
+                <a href="#" class="header__socialNetworks-logo-link">
+                    <img src="./assets/logo/twitter.svg" alt="картинка" class="header__socialNetworks-logo-link-img">
+                </a>
             </div>
             <div>
-                <div class="header__userRegistration">
+                <button class="header__userRegistration">
                     <img src="./assets/logo/regist.svg" alt="картинка" class="header__userRegistration-img">
-                </div>
-                <div class="header__basket">
+                </button>
+                <button class="header__basket">
                     <img src="./assets/logo/basket.svg" alt="картинка" class="header__basket-img">
-                </div>
+                </button>
             </div>
-            <div class="header__hamburgerMenu">
+            <button class="header__hamburgerMenu">
                 <img src="./assets/logo/burgerMenu.svg" alt="картинка" class="header__hamburgerMenu-img">
-            </div>
+            </button>
         </section>
     </header>
     <main>
         <section class="groceryCards">
-            <ul class="groceryCards__list"></ul>
+            <div class="groceryCards__menu">
+                <h2 class="groceryCards__menu-title">Меню</h2>
+            </div>
+            <ul class="groceryCards__list">
+                <!-- cards -->
+            </ul>
             <div class="aboutPage">
                 <p class="aboutPage__text">about</p>
-                <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nemo laboriosam eveniet illo temporibus exercitationem nobis molestiae autem mollitia quasi.</h2>
+                <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nemo laboriosam eveniet illo
+                    temporibus exercitationem nobis molestiae autem mollitia quasi.</h2>
             </div>
         </section>
     </main>

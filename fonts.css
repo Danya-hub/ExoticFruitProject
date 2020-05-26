@@ -2,3 +2,13 @@
     font-family: 'FuturaPT-Medium';
     src: url(./fonts/FuturaPT-Medium.ttf);
 }
+
+@font-face {
+    font-family: 'FuturaPT-Heavy';
+    src: url(./fonts/FuturaPT-Heavy.ttf);
+}
+
+@font-face {
+    font-family: 'FuturaPT-Light';
+    src: url(./fonts/FuturaPT-Light.ttf);
+}
