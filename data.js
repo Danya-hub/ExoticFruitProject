@@ -244,7 +244,7 @@ export const fruitStockIncludes = () => {
 };
 
 export const fruitSet = [{ //1
-        id: 1,
+        id: '1',
         category: 'fruitSet',
         photoProduct: './components/header/assets/fruitSets/bigBoss.jpg',
         title: 'Фруктовый набор "BIG BOSS"',
@@ -252,21 +252,21 @@ export const fruitSet = [{ //1
         stock: 31.74
     },
     { //2
-        id: 2,
+        id: '2',
         category: 'fruitSet',
         photoProduct: './components/header/assets/fruitSets/bright.jpg',
         title: 'Фруктовый набор "Яркий"',
         price: 34.21
     },
     { //3
-        id: 3,
+        id: '3',
         category: 'fruitSet',
         photoProduct: './components/header/assets/fruitSets/exoticMix.jpg',
         title: 'Фруктовый набор "Экзотический микс"',
         price: 24.76
     },
     { //4
-        id: 4,
+        id: '4',
         category: 'fruitSet',
         photoProduct: './components/header/assets/fruitSets/fruitBoom.jpg',
         title: 'Фруктовый набор "Фруктовый бум"',
@@ -274,35 +274,35 @@ export const fruitSet = [{ //1
         stock: 19.19
     },
     { //5
-        id: 5,
+        id: '5',
         category: 'fruitSet',
         photoProduct: './components/header/assets/fruitSets/juicySlices.jpg',
         title: 'Фруктовый набор "Сочные ломтики"',
         price: 14.83
     },
     { //6
-        id: 6,
+        id: '6',
         category: 'fruitSet',
         photoProduct: './components/header/assets/fruitSets/love.jpg',
         title: 'Фруктовый набор "Люблю"',
         price: 12.54
     },
     { //7
-        id: 7,
+        id: '7',
         category: 'fruitSet',
         photoProduct: './components/header/assets/fruitSets/tender.jpg',
         title: 'Фруктовый набор "Ты нежная"',
         price: 22.03
     },
     { //8
-        id: 8,
+        id: '8',
         category: 'fruitSet',
         photoProduct: './components/header/assets/fruitSets/tenderness.jpg',
         title: 'Фруктовый набор "Нежность"',
         price: 18.31
     },
     { //9
-        id: 9,
+        id: '9',
         category: 'fruitSet',
         photoProduct: './components/header/assets/fruitSets/tropical.jpg',
         title: 'Фруктовый набор "Тропический"',
@@ -310,21 +310,21 @@ export const fruitSet = [{ //1
         stock: 24.59
     },
     { //10
-        id: 10,
+        id: '10',
         category: 'fruitSet',
         photoProduct: './components/header/assets/fruitSets/taste.jpg',
         title: 'Фруктовый набор "Пробуй"',
         price: 10.11
     },
     { //11
-        id: 11,
+        id: '11',
         category: 'fruitSet',
         photoProduct: './components/header/assets/fruitSets/wonderful.jpg',
         title: 'Фруктовый набор "Чудесный"',
         price: 19.05
     },
     { //12
-        id: 12,
+        id: '12',
         category: 'fruitSet',
         photoProduct: './components/header/assets/fruitSets/сaribbean.jpg',
         title: 'Фруктовый набор "Карибы"',
@@ -337,91 +337,91 @@ export const fruitSetStockIncludes = () => {
 };
 
 export const berries = [{
-        id: 1,
+        id: '1',
         category: 'berries',
         photoProduct: './components/header/assets/berries/Barberry.jpg',
         title: 'Барбарис (Barberry)',
         price: 3.09
     },
     {
-        id: 2,
+        id: '2',
         category: 'berries',
         photoProduct: './components/header/assets/berries/Blackberry.jpg',
         title: 'Ежевика (Blackberry)',
         price: 6.34
     },
     {
-        id: 3,
+        id: '3',
         category: 'berries',
         photoProduct: './components/header/assets/berries/blackMulberry.jpg',
         title: 'Черная шелковица (Black mulberry)',
         price: 4.21
     },
     {
-        id: 4,
+        id: '4',
         category: 'berries',
         photoProduct: './components/header/assets/berries/Blueberries.jpg',
         title: 'Черника (Blueberries)',
         price: 5.79
     },
     {
-        id: 5,
+        id: '5',
         category: 'berries',
         photoProduct: './components/header/assets/berries/Cloudberry.jpg',
         title: 'Морошка (Cloudberry)',
         price: 2.42
     },
     {
-        id: 6,
+        id: '6',
         category: 'berries',
         photoProduct: './components/header/assets/berries/Lingonberry.jpg',
         title: 'Брусника (Lingonberry)',
         price: 3.58
     },
     {
-        id: 7,
+        id: '7',
         category: 'berries',
         photoProduct: './components/header/assets/berries/raspberry.jpg',
         title: 'Малина (Raspberry)',
         price: 5.61
     },
     {
-        id: 8,
+        id: '8',
         category: 'berries',
         photoProduct: './components/header/assets/berries/seaBuckthorn.jpg',
         title: 'Облепиха (Sea buckthorn)',
         price: 2.51
     },
     {
-        id: 9,
+        id: '9',
         category: 'berries',
         photoProduct: './components/header/assets/berries/shipovnik.jpg',
         title: 'Шиповник (Shipovnik)',
         price: 2.95
     },
     {
-        id: 10,
+        id: '10',
         category: 'berries',
         photoProduct: './components/header/assets/berries/strawberries.jpg',
         title: 'Клубника (Strawberries)',
         price: 6.32
     },
     {
-        id: 11,
+        id: '11',
         category: 'berries',
         photoProduct: './components/header/assets/berries/whiteMulberry.jpg',
         title: 'Белая шелковица (White mulberry)',
         price: 4.21
     },
     {
-        id: 12,
+        id: '12',
         category: 'berries',
         photoProduct: './components/header/assets/berries/wildCurrant.jpg',
         title: 'Дикая смородина (Wild сurrant)',
         price: 5.13
     },
     {
-        id: 13,
+        id: '13',
         category: 'berries',
         photoProduct: './components/header/assets/berries/Blueberry.jpg',
         title: 'Черника (Blueberry)',

@@ -369,6 +369,7 @@ img {
         border-left: 2px solid rgb(229, 186, 130, 0.6);
         border-bottom-left-radius: 1em;
         transition-duration: .5s;
+        padding-top: 3px;
         height: 40px;
         left: 2em;
         top: 6.8em;
@@ -378,10 +379,6 @@ img {
     .groceryCards__menuBlock-listFunction-item {
         border-bottom: unset;
         border-top: 2px solid rgb(229, 186, 130, 0.6);
-    }
-
-    .groceryCards__menuBlock:hover {
-        background-color: rgb(228, 228, 205);
     }
 
     .groceryCards__menuBlock-listFunctionActive {
