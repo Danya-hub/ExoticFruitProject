@@ -1,7 +1,7 @@
 'use strict';
 
 export const fruit = [{ //1
-        id: 1,
+        id: '1',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/durain.jpg',
         title: 'Дуриан (Durian)',
@@ -9,28 +9,28 @@ export const fruit = [{ //1
         stock: 80.38
     },
     { //2
-        id: 2,
+        id: '2',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Mangosteen.jpg',
         title: 'Мангостин (Mangosteen)',
         price: 25.37
     },
     { //3
-        id: 3,
+        id: '3',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Jackfruit.jpg',
         title: 'Джекфрут (Jackfruit)',
         price: 8.21
     },
     { //4
-        id: 4,
+        id: '4',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Lychee.jpg',
         title: 'Личи (Lychee)',
         price: 8.95
     },
     { //5
-        id: 5,
+        id: '5',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Mango.jpg',
         title: 'Манго (Mango)',
@@ -38,21 +38,21 @@ export const fruit = [{ //1
         stock: 6.70
     },
     { //6
-        id: 6,
+        id: '6',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Papaya.jpg',
         title: 'Папайя (Papaya)',
         price: 5.78
     },
     { //7
-        id: 7,
+        id: '7',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Longan.jpg',
         title: 'Лонган (Longan)',
         price: 3.88
     },
     { //8
-        id: 8,
+        id: '8',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Rambutan.jpg',
         title: 'Рамбутан (Rambutan)',
@@ -60,56 +60,56 @@ export const fruit = [{ //1
         stock: 25.09
     },
     { //9
-        id: 9,
+        id: '9',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Pitaya.jpg',
         title: 'Питайя (Pitaya)',
         price: 6.53
     },
     { //10
-        id: 10,
+        id: '10',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Carambola.jpg',
         title: 'Карамбола (Carambola)',
         price: 2.05
     },
     { //11
-        id: 11,
+        id: '11',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Pomelo.jpg',
         title: 'Помело (Pomelo)',
         price: 2.42
     },
     { //12
-        id: 12,
+        id: '12',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Guava.jpg',
         title: 'Гуава (Guava)',
         price: 13.43
     },
     { //13
-        id: 13,
+        id: '13',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Sapodilla.jpg',
         title: 'Саподилла (Sapodilla)',
         price: 2.16
     },
     { //14
-        id: 14,
+        id: '14',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/SugarApple.jpg',
         title: 'Сахарное яблоко (Sugar Apple)',
         price: 14.40
     },
     { //15
-        id: 15,
+        id: '15',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Chompoo.jpg',
         title: 'Чомпу (Chompoo)',
         price: 14.92
     },
     { //16
-        id: 16,
+        id: '16',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Ackee.jpg',
         title: 'Аки (Ackee)',
@@ -117,98 +117,98 @@ export const fruit = [{ //1
         stock: 14.95
     },
     { //17
-        id: 17,
+        id: '17',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Ambarella.jpg',
         title: 'Амбарелла (Ambarella)',
         price: 6.90
     },
     { //18
-        id: 18,
+        id: '18',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Bambangan.jpg',
         title: 'Бам-балан (Bambangan)',
         price: 4.63
     },
     { //19
-        id: 19,
+        id: '19',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Salak.jpg',
         title: 'Салак (Salak)',
         price: 1.83
     },
     { //20
-        id: 20,
+        id: '20',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Bael.jpg',
         title: 'Баиль (Bael)',
         price: 2.91
     },
     { //21
-        id: 21,
+        id: '21',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Sapodilla.jpg',
         title: 'Кивано (Kiwano)',
         price: 3.73
     },
     { //22
-        id: 22,
+        id: '22',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/MiracleFruit.jpg',
         title: 'Магический фрукт (Miracle Fruit)',
         price: 6.75
     },
     { //23
-        id: 23,
+        id: '23',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Tamarind.jpg',
         title: 'Тамаринд (Tamarind)',
         price: 5.22
     },
     { //24
-        id: 24,
+        id: '24',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Marula.jpg',
         title: 'Марула (Marula)',
         price: 2.80
     },
     { //25
-        id: 25,
+        id: '25',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Kumquat.jpg',
         title: 'Кумкват (Kumquat)',
         price: 5.60
     },
     { //26
-        id: 26,
+        id: '26',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Citron.jpg',
         title: 'Цитрон (Citron)',
         price: 9.33
     },
     { //27
-        id: 27,
+        id: '27',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/PepinoDulce.jpg',
         title: 'Пепино (Pepino Dulce)',
         price: 6.01
     },
     { //28
-        id: 28,
+        id: '28',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Mamey.jpg',
         title: 'Мамея (Mamey)',
         price: 7.95
     },
     { //29
-        id: 29,
+        id: '29',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Naranjilla.jpg',
         title: 'Наранхилла (Naranjilla)',
         price: 10.82
     },
     { //30
-        id: 30,
+        id: '30',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Soursop.jpg',
         title: 'Сметанное яблоко (Soursop)',
@@ -216,14 +216,14 @@ export const fruit = [{ //1
         stock: 47.10
     },
     { //31
-        id: 31,
+        id: '31',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Noni.jpg',
         title: 'Нони (Noni)',
         price: 13.17
     },
     { //32
-        id: 32,
+        id: '32',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Curuba.jpg',
         title: 'Куруба (Curuba)',
@@ -336,8 +336,7 @@ export const fruitSetStockIncludes = () => {
     fruitSet.filter(item => item.stock);
 };
 
-export const berries = [
-    {
+export const berries = [{
         id: 1,
         category: 'berries',
         photoProduct: './components/header/assets/berries/Barberry.jpg',

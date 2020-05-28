@@ -11,7 +11,8 @@ const header = () => {
     const headerListLinkActive = document.querySelector('.header__list-li-linkActive'); //a
     const groceryCardsList = document.querySelector('.groceryCards__list'); //ul
     const aboutPage = document.querySelector('.groceryCards__aboutPage'); //div
-    const groceryCardsMenu = document.querySelector('.groceryCards__menu'); //div
+    const groceryCardsMenu = document.querySelector('.groceryCards__menuBlock'); //div
+    const groceryCards = document.querySelector('.groceryCards__menu'); //div
 
     const getMarkup = (array) => {
         // console.dir(array);
@@ -25,8 +26,8 @@ const header = () => {
                 </div>
                 <div>
                     <p class="groceryCards__list-item-price">
-                        <span class="groceryCards__list-item-price-span">${item.price}$/${((item.category === 'fruit') || (item.category === 'berries'))?'pcs':'kg'}</span>
-                        <span class="groceryCards__list-item-stock-span">${item.stock}$/${((item.category === 'fruit') || (item.category === 'berries'))?'pcs':'kg'}</span>
+                        <span class=${item.stock ? "groceryCards__list-item-priceThrough" : "groceryCards__list-item-price"}>${item.price}$/${((item.category === 'fruit') || (item.category === 'fruitSet'))?'pcs':'kg'}</span>
+                        <span class="groceryCards__list-item-stock-span">${item.stock ? item.stock : ''}${item.stock ? (((item.category === 'fruit') || (item.category === 'fruitSet'))?'$/pcs':'$/kg') : ''}</span>
                     </p>
                     <button class="groceryCards__list-item-button">
                         <img src="./components/header/assets/logo/cart.svg" alt="картинка" class="groceryCards__list-item-button-img">
@@ -38,10 +39,12 @@ const header = () => {
         return markup
     }
     groceryCardsList.innerHTML = getMarkup(fruit);
+    groceryCardsMenu.classList.add('groceryCards__menuBlockActive');
 
     const linkActiveMain = (e) => {
+        groceryCards.classList.remove('groceryCard__menuActive');
         aboutPage.classList.remove('groceryCards__aboutPageActive');
-        groceryCardsMenu.classList.add('groceryCards__menuActive');
+        groceryCardsMenu.classList.add('groceryCards__menuBlockActive');
         if (e.target === e.currentTarget) {
             return
         } else {
@@ -57,7 +60,8 @@ const header = () => {
                     break;
                 case 'about':
                     aboutPage.classList.add('groceryCards__aboutPageActive');
-                    groceryCardsMenu.classList.remove('groceryCards__menuActive');
+                    groceryCards.classList.add('groceryCard__menuActive');
+                    groceryCardsMenu.classList.remove('groceryCards__menuBlockActive');
                     groceryCardsList.innerHTML = '';
                     break;
                 default:
@@ -67,7 +71,7 @@ const header = () => {
             // const headerListLinkActive = document.querySelector('.header__list-li-linkActive');
             // headerListLinkActive && headerListLinkActive.classList.remove('headerListLinkActive');
             // e.target.classList.add('headerListLinkActive');
-            console.log(e.target.dataset.link);
+            // console.log(e.target.dataset.link);
         }
     }
     headerList.addEventListener('click', linkActiveMain);
