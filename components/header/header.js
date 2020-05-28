@@ -8,11 +8,11 @@ import {
 
 const header = () => {
     const headerList = document.querySelector('.header__list'); //ul
-    const headerListLinkActive = document.querySelector('.header__list-li-linkActive'); //a
     const groceryCardsList = document.querySelector('.groceryCards__list'); //ul
     const aboutPage = document.querySelector('.groceryCards__aboutPage'); //div
     const groceryCardsMenu = document.querySelector('.groceryCards__menuBlock'); //div
     const groceryCards = document.querySelector('.groceryCards__menu'); //div
+    const listFunction = document.querySelector('.groceryCards__menuBlock-listFunction'); //ul
 
     const getMarkup = (array) => {
         // console.dir(array);
@@ -75,6 +75,9 @@ const header = () => {
         }
     }
     headerList.addEventListener('click', linkActiveMain);
+    groceryCardsMenu.addEventListener('click', filterActive => {
+        listFunction.classList.toggle('groceryCards__menuBlock-listFunctionActive');
+    })
 }
 
 export default header;
