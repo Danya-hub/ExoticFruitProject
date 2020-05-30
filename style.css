@@ -23,6 +23,7 @@ img {
 /* ----------======= header =======---------- */
 
 .header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,7 +32,7 @@ img {
     border-bottom-left-radius: 35px;
     border-bottom-right-radius: 35px;
     height: 110px;
-    padding: 0 40px;
+    padding: 0 10px;
 }
 
 .header__logo {
@@ -39,8 +40,8 @@ img {
 }
 
 .header__logoProject-img {
-    width: 235px;
-    height: 60px;
+    width: 165px;
+    height: 45px;
 }
 
 .header__list-item a {
@@ -96,26 +97,239 @@ img {
     outline: none;
 }
 
-@media (max-width: 370px) {
+/* ----------======= groceryCards =======---------- */
+
+.groceryCards__aboutPage {
+    display: none;
+    margin-top: 50px;
+}
+
+.groceryCards__aboutPageActive {
+    display: block;
+}
+
+.groceryCard__menuActive {
+    display: none !important;
+}
+
+.groceryCards__menuBlock-title {
+    font: 600 25px 'FuturaPTCond-Book';
+    background: linear-gradient(to right, rgb(0, 175, 0) 10%, rgb(0, 224, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+.groceryCards__menuBlock-listFunction-item {
+    border-top: 2px solid rgb(229, 186, 130, 0.6);
+    border-bottom: unset;
+    padding: 10px 0 10px 10px;
+    transition-duration: .5s;
+    cursor: pointer;
+}
+
+.groceryCards__menuBlock-listFunction-item:hover {
+    background-color: rgb(228, 228, 205);
+}
+
+.groceryCards__menuBlock-listFunction-item-text {
+    font: 100 16px 'FuturaPT-Medium';
+    background: linear-gradient(to right, rgb(0, 175, 0) 20%, rgb(0, 224, 0));
+    transition: 0.5s;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.groceryCards>div:not(.groceryCards__aboutPage) {
+    display: flex;
+    justify-content: space-between;
+    margin: 60px 0;
+}
+
+.groceryCards__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 200px));
+    grid-gap: 30px;
+    justify-content: center;
+    min-width: 320px;
+    max-width: 1700px;
+}
+
+.groceryCards__list-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffff;
+    height: 265px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 17px;
+    border-radius: unset;
+    transition-duration: unset;
+}
+
+.groceryCards__list-item:hover {
+    transform: unset;
+    box-shadow: unset;
+}
+
+.groceryCards__list-item-title {
+    font: 100 13px 'FuturaPT-Heavy';
+    text-align: center;
+}
+
+.groceryCards__list-item-price {
+    font: 600 13px 'FuturaPT-Light';
+}
+
+.groceryCards__list-item-priceThrough {
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+
+.groceryCards__list-item-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.groceryCards__list-item-price-span {
+    margin-right: 10px;
+}
+
+.groceryCards__list-item-button-img {
+    width: 30px;
+    height: 30px;
+}
+
+.groceryCards__list-item>div+div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.groceryCards__menuBlock {
+    position: absolute;
+    background-color: beige;
+    transition: .3s;
+    border-top-right-radius: unset;
+    border-right: 2px solid rgb(229, 186, 130, 0.6);
+    border-left: 2px solid rgb(229, 186, 130, 0.6);
+    border-bottom: 2px solid rgb(229, 186, 130, 0.6);
+    border-bottom-right-radius: 1em;
+    border-bottom-left-radius: 1em;
+    width: 200px;
+    height: 40px;
+    left: 0;
+    right: 0;
+    top: 6.8em;
+    margin: auto;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* .groceryCards__menuBlock::after {
+    content: '';
+    position: absolute;
+    background: url(./components/header/assets/logo/apple.svg) center no-repeat;
+    background-size: 100%;
+    width: 80px;
+    height: 80px;
+    left: 0;
+    right: 0;
+    bottom: 2.5em;
+    margin: auto;
+} */
+
+.groceryCards__menuBlock-listFunction {
+    display: none;
+}
+
+.groceryCards__menuBlock-listFunctionActive,
+.groceryCards__menuBlockActive {
+    display: block;
+}
+
+.groceryCards__aboutPage-mainTitle {
+    font: 600 35px 'FuturaPTCond-Book';
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.groceryCards__aboutPage-text {
+    margin: 40px 30px;
+}
+
+.groceryCards__aboutPage-text-p {
+    font: 100 23px 'FuturaPTCond-Book';
+    text-align: center;
+}
+
+.groceryCards__aboutPage-logoFruit-img {
+    width: 200px;
+    margin: 0 auto;
+}
+
+/* ----------======= footer =======---------- */
+
+.footer {
+    background-color: beige;
+    border-top: 2px solid rgb(229, 186, 130, 0.6);
+    height: 220px;
+    margin-top: 2em;
+}
+
+.footer__logoProject-img {
+    width: 200px;
+    margin: 30px auto 0 auto;
+}
+
+.footer__text {
+    font: 100 18px 'FuturaPT-Medium';
+    background: linear-gradient(to right, rgb(0, 175, 0) 5%, rgb(0, 224, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer__socaialNetworks {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    margin: 30px auto 0 auto;
+}
+
+.footer__socaialNetworks-logoLink-img {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+}
+
+.changeHeight {
+    height: 182.5px;
+}
+
+/* ----------======= @media =======---------- */
+
+@media (min-width: 768px) { /*1*/
     .header {
-        padding: 0 10px;
+        padding: 0 40px;
     }
 
     .header__logoProject-img {
-        width: 165px;
-        height: 45px;
+        width: 235px;
+        height: 60px;
     }
-}
 
-@media (min-width: 800px) {
     .header__list {
         display: flex;
         justify-content: space-between;
-        width: 430px;
+        width: 380px;
     }
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1100px) { /*2*/
     .header>div:not(.header__logo):not(.header__hamburgerMenu) {
         display: flex;
         justify-content: space-between;
@@ -172,290 +386,75 @@ img {
     }
 }
 
-/* ----------======= groceryCards =======---------- */
-
-.groceryCards__aboutPage {
-    display: none;
-    margin-top: 50px;
-}
-
-.groceryCards__aboutPageActive {
-    display: block;
-}
-
-.groceryCard__menuActive {
-    display: none !important;
-}
-
-.groceryCards__menuBlock-title {
-    font: 600 25px 'FuturaPTCond-Book';
-    background: linear-gradient(to right, rgb(0, 175, 0) 10%, rgb(0, 224, 0));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    border-bottom: 2px solid rgb(229, 186, 130, 0.6);
-    padding-left: 5px;
-    text-align: center;
-}
-
-.groceryCards__menuBlock-listFunction-item {
-    border-bottom: 2px solid rgb(229, 186, 130, 0.6);
-    padding: 10px 0 10px 10px;
-    transition-duration: .5s;
-    cursor: pointer;
-}
-
-.groceryCards__menuBlock-listFunction-item:hover {
-    background-color: rgb(228, 228, 205);
-}
-
-.groceryCards__menuBlock-listFunction-item-text {
-    font: 100 16px 'FuturaPT-Medium';
-    background: linear-gradient(to right, rgb(0, 175, 0) 20%, rgb(0, 224, 0));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.groceryCards>div:not(.groceryCards__aboutPage) {
-    display: flex;
-    justify-content: space-between;
-    margin: 30px 0;
-}
-
-.groceryCards__list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 200px));
-    grid-gap: 30px;
-    justify-content: center;
-    min-width: 320px;
-    max-width: 1700px;
-}
-
-.groceryCards__list-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #ffff;
-    transition-duration: 500ms;
-    border-radius: 10px;
-    height: 265px;
-    border-bottom: 2px solid #000;
-    padding-bottom: 17px;
-}
-
-.groceryCards__list-item:hover {
-    transform: scale(1.05);
-    -webkit-box-shadow: 1px 1px 35px -22px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 1px 1px 35px -22px rgba(0, 0, 0, 0.75);
-    box-shadow: 1px 1px 35px -22px rgba(0, 0, 0, 0.75);
-}
-
-.groceryCards__list-item-title {
-    font: 100 13px 'FuturaPT-Heavy';
-    text-align: center;
-}
-
-.groceryCards__list-item-price {
-    font: 600 13px 'FuturaPT-Light';
-}
-
-.groceryCards__list-item-priceThrough {
-    text-decoration: line-through;
-    margin-right: 10px;
-}
-
-.groceryCards__list-item-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    outline: none;
-}
-
-.groceryCards__list-item-price-span {
-    margin-right: 10px;
-}
-
-.groceryCards__list-item-button-img {
-    width: 30px;
-    height: 30px;
-}
-
-.groceryCards__list-item>div+div {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.groceryCards__menuBlock {
-    display: none;
-    position: sticky;
-    background-color: beige;
-    border-right: 2px solid rgb(229, 186, 130, 0.6);
-    border-top: 2px solid rgb(229, 186, 130, 0.6);
-    border-bottom: 2px solid rgb(229, 186, 130, 0.6);
-    border-bottom-right-radius: 1em;
-    border-top-right-radius: 1em;
-    width: 200px;
-    height: 300px;
-    top: 6em;
-}
-
-/* .groceryCards__menuBlock::after {
-    content: '';
-    position: absolute;
-    background: url(./components/header/assets/logo/apple.svg) center no-repeat;
-    background-size: 100%;
-    width: 80px;
-    height: 80px;
-    left: 0;
-    right: 0;
-    bottom: 2.5em;
-    margin: auto;
-} */
-
-.groceryCards__menuBlockActive {
-    display: block;
-}
-
-.groceryCards__aboutPage-mainTitle {
-    font: 600 35px 'FuturaPTCond-Book';
-    text-transform: uppercase;
-    text-align: center;
-}
-
-.groceryCards__aboutPage-text {
-    margin: 40px 30px;
-}
-
-.groceryCards__aboutPage-text-p {
-    font: 100 23px 'FuturaPTCond-Book';
-    text-align: center;
-}
-
-.groceryCards__aboutPage-logoFruit-img {
-    width: 200px;
-    margin: 0 auto;
-}
-
-@media (min-width: 425px) {
+@media (min-width: 679px) { /*3*/
     .groceryCards__list-item {
         border: unset;
-        padding: 0;
-    }
-}
-
-@media (min-width: 1400px) {
-    .groceryCards__list {
-        margin: 0 10px;
-    }
-}
-
-@media (max-width: 1400px) {
-    .header {
-        position: relative;
-    }
-
-    .groceryCards>div:not(.groceryCards__aboutPage) {
-        margin: 60px 0;
-    }
-
-    .groceryCards__menuBlock-filterActive {
-        height: 185px;
-    }
-
-    .groceryCards__menuBlock {
-        position: absolute;
-        border-top: unset;
-        border-top-right-radius: unset;
-        border-left: 2px solid rgb(229, 186, 130, 0.6);
-        border-bottom-left-radius: 1em;
-        transition-duration: .5s;
-        padding-top: 3px;
-        height: 40px;
-        left: 2em;
-        top: 6.8em;
-        z-index: 1;
-    }
-
-    .groceryCards__menuBlock-listFunction-item {
-        border-bottom: unset;
-        border-top: 2px solid rgb(229, 186, 130, 0.6);
-    }
-
-    .groceryCards__menuBlock-listFunctionActive {
-        display: none;
-    }
-
-    .groceryCards__menuBlock-title {
-        border-bottom: unset;
-        cursor: pointer;
-    }
-
-}
-
-@media (max-width: 425px) {
-    .groceryCards__menuBlock {
-        left: 0;
-        right: 0;
-        margin: auto;
-    }
-
-    .groceryCards__list-item {
-        border-radius: unset;
-        transition-duration: unset;
+        transition-duration: 500ms;
+        border-radius: 10px;
     }
 
     .groceryCards__list-item:hover {
-        transform: unset;
-        box-shadow: unset;
+        transform: scale(1.05);
+        -webkit-box-shadow: 1px 1px 35px -22px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 1px 1px 35px -22px rgba(0, 0, 0, 0.75);
+        box-shadow: 1px 1px 35px -22px rgba(0, 0, 0, 0.75);
     }
 
+    .groceryCards__menuBlock {
+        left: 2em;
+        right: unset;
+    }
+}
+
+@media (max-width: 679px) { /*4*/
     .groceryCards__list-item:last-child {
         border-bottom: unset;
         padding-bottom: 0;
     }
 }
 
-@media (min-width: 2050px) {
+@media (min-width: 1400px) { /*5*/
+    .header {
+        position: unset;
+    }
+
+    .groceryCards>div:not(.groceryCards__aboutPage) {
+        margin: 30px 0;
+    }
+
+    .groceryCards__menuBlock-listFunction-item {
+        border-bottom: 2px solid rgb(229, 186, 130, 0.6);
+        border-top: unset;
+    }
+
+    .groceryCards__menuBlock {
+        position: sticky;
+        background-color: beige;
+        border-top: 2px solid rgb(229, 186, 130, 0.6);
+        border-left: unset;
+        border-bottom-left-radius: unset;
+        border-top-right-radius: 1em;
+        height: 300px;
+        margin: 0;
+        left: 0;
+        cursor: unset;
+    }
+
+    .groceryCards__menuBlock-listFunction {
+        display: unset;
+    }
+
+    .groceryCards__menuBlock-title {
+        border-bottom: 2px solid rgb(229, 186, 130, 0.6);
+        cursor: unset;
+    }
+}
+
+@media (min-width: 2050px) { /*6*/
     .groceryCards__list {
         margin: 0 40px;
         max-width: 2300px;
     }
-}
-
-/* ----------======= footer =======---------- */
-
-.footer {
-    background-color: beige;
-    border-top: 2px solid rgb(229, 186, 130, 0.6);
-    height: 220px;
-    margin-top: 2em;
-}
-
-.footer__logoProject-img {
-    width: 200px;
-    margin: 30px auto 0 auto;
-}
-
-.footer__text {
-    font: 100 18px 'FuturaPT-Medium';
-    background: linear-gradient(to right, rgb(0, 175, 0) 5%, rgb(0, 224, 0));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.footer__socaialNetworks {
-    display: flex;
-    justify-content: space-between;
-    width: 100px;
-    margin: 30px auto 0 auto;
-}
-
-.footer__socaialNetworks-logoLink-img {
-    width: 20px;
-    height: 20px;
-    border-radius: 6px;
 }
 
 /* ----------======= THE END =======---------- */

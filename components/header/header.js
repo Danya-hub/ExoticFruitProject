@@ -13,6 +13,8 @@ const header = () => {
     const groceryCardsMenu = document.querySelector('.groceryCards__menuBlock'); //div
     const groceryCards = document.querySelector('.groceryCards__menu'); //div
     const listFunction = document.querySelector('.groceryCards__menuBlock-listFunction'); //ul
+    const spanText = document.querySelectorAll('.groceryCards__menuBlock-listFunction-item-text'); //span
+
 
     const getMarkup = (array) => {
         // console.dir(array);
@@ -74,10 +76,19 @@ const header = () => {
             // console.log(e.target.dataset.link);
         }
     }
+
+    const filterActive = () => {
+        // groceryCardsMenu.classList.toggle('changeHeight');
+        // listFunction.classList.toggle('groceryCards__menuBlock-listFunctionActive');
+        // spanText.classList.toggle('groceryCards__menuBlock-spanActive');
+        // spanText.map(el => console.log(el));
+        groceryCardsMenu.classList.toggle('changeHeight');
+        setTimeout(() => {
+            listFunction.classList.toggle('groceryCards__menuBlockActive');
+        }, 0);
+    }
     headerList.addEventListener('click', linkActiveMain);
-    groceryCardsMenu.addEventListener('click', filterActive => {
-        listFunction.classList.toggle('groceryCards__menuBlock-listFunctionActive');
-    })
+    groceryCards.addEventListener('click', filterActive);
 }
 
 export default header;
