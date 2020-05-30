@@ -420,6 +420,7 @@ img {
     .groceryCards__menuBlock-listFunction-item {
         border-bottom: 2px solid rgb(229, 186, 130, 0.6);
         border-top: unset;
+        cursor: pointer;
     }
 
     .groceryCards__menuBlock-listFunction-item:hover {
@@ -430,13 +431,13 @@ img {
         position: sticky;
         background-color: beige;
         border-top: 2px solid rgb(229, 186, 130, 0.6);
-        border-left: unset;
         border-bottom-left-radius: unset;
         border-top-right-radius: 1em;
+        border-left: unset;
         height: 300px;
         margin: 0;
         left: 0;
-        cursor: pointer;
+        cursor: unset;
     }
 
     .groceryCards__menuBlock-listFunction {
