@@ -125,11 +125,6 @@ img {
     border-bottom: unset;
     padding: 10px 0 10px 10px;
     transition-duration: .5s;
-    cursor: pointer;
-}
-
-.groceryCards__menuBlock-listFunction-item:hover {
-    background-color: rgb(228, 228, 205);
 }
 
 .groceryCards__menuBlock-listFunction-item-text {
@@ -224,7 +219,6 @@ img {
     right: 0;
     top: 6.8em;
     margin: auto;
-    cursor: pointer;
     z-index: 1;
 }
 
@@ -307,7 +301,7 @@ img {
 }
 
 .changeHeight {
-    height: 182.5px;
+    height: 185px;
 }
 
 /* ----------======= @media =======---------- */
@@ -403,6 +397,7 @@ img {
     .groceryCards__menuBlock {
         left: 2em;
         right: unset;
+        cursor: pointer;
     }
 }
 
@@ -427,6 +422,10 @@ img {
         border-top: unset;
     }
 
+    .groceryCards__menuBlock-listFunction-item:hover {
+        background-color: rgb(228, 228, 205);
+    }
+
     .groceryCards__menuBlock {
         position: sticky;
         background-color: beige;
@@ -437,7 +436,7 @@ img {
         height: 300px;
         margin: 0;
         left: 0;
-        cursor: unset;
+        cursor: pointer;
     }
 
     .groceryCards__menuBlock-listFunction {
