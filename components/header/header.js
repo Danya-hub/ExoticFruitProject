@@ -127,8 +127,6 @@ const header = () => {
     const pushInfoHeader = () => {
         const pushInfo = document.querySelectorAll('.header>div:not(.header__logo):not(.header__hamburgerMenu-block)');
         const blockInfo = document.querySelector('.header__hamburgerMenu-blockInfo');
-        
-        // blockInfo.innerHTML = pushInfo;
     }
 
     headerList.addEventListener('click', linkActiveMain);
