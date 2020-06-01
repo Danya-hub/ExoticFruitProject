@@ -332,9 +332,7 @@ img {
 
 /* ----------======= @media =======---------- */
 
-@media (min-width: 768px) {
-
-    /*1*/
+@media (min-width: 768px) { /*1*/
     .header {
         padding: 0 40px;
     }
@@ -351,9 +349,7 @@ img {
     }
 }
 
-@media (min-width: 1100px) {
-
-    /*2*/
+@media (min-width: 1100px) { /*2*/
     .header>div:not(.header__logo):not(.header__hamburgerMenu-block) {
         display: flex;
         justify-content: space-between;
@@ -372,7 +368,7 @@ img {
     }
 }
 
-@media (min-width: 1950px) {
+@media (min-width: 1950px) { /*3*/
     .header {
         height: 130px;
     }
@@ -410,9 +406,7 @@ img {
     }
 }
 
-@media (min-width: 679px) {
-
-    /*3*/
+@media (min-width: 679px) { /*4*/
     .groceryCards__list-item {
         border: unset;
         transition: .5s;
@@ -433,18 +427,13 @@ img {
     }
 }
 
-@media (max-width: 679px) {
-
-    /*4*/
-    .groceryCards__list-item:last-child {
+@media (min-width: 430px) { /*5*/
+    .groceryCards__list-item {
         border-bottom: unset;
-        padding-bottom: 0;
     }
 }
 
-@media (min-width: 1400px) {
-
-    /*5*/
+@media (min-width: 1400px) { /*6*/
     .header {
         position: unset;
     }
@@ -488,9 +477,7 @@ img {
     }
 }
 
-@media (min-width: 2050px) {
-
-    /*6*/
+@media (min-width: 2050px) { /*7*/
     .groceryCards__list {
         margin: 0 40px;
         max-width: 2300px;
