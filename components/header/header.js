@@ -6,6 +6,10 @@ import {
     berries
 } from "../../data.js";
 
+const pageInfo = {
+    currentPage: '',
+}
+
 const header = () => {
     const headerList = document.querySelector('.header__list'); //ul
     const groceryCardsList = document.querySelector('.groceryCards__list'); //ul
@@ -13,8 +17,7 @@ const header = () => {
     const groceryCardsMenu = document.querySelector('.groceryCards__menuBlock'); //div
     const groceryCards = document.querySelector('.groceryCards__menu'); //div
     const listFunction = document.querySelector('.groceryCards__menuBlock-listFunction'); //ul
-    const spanText = document.querySelectorAll('.groceryCards__menuBlock-listFunction-item-text'); //span
-
+    // console.log(spanTextSale);
 
     const getMarkup = (array) => {
         // console.dir(array);
@@ -77,18 +80,40 @@ const header = () => {
         }
     }
 
-    const filterActive = () => {
+    const filterActive = (e) => {
         // groceryCardsMenu.classList.toggle('changeHeight');
         // listFunction.classList.toggle('groceryCards__menuBlock-listFunctionActive');
         // spanText.classList.toggle('groceryCards__menuBlock-spanActive');
         // spanText.map(el => console.log(el));
+        if (e.target === e.currentTarget) {
+            return
+        }
+        console.log(e.currentTarget);
         groceryCardsMenu.classList.toggle('changeHeight');
-        setTimeout(() => {
-            listFunction.classList.toggle('groceryCards__menuBlockActive');
-        }, 0);
+        listFunction.classList.toggle('groceryCards__menuBlockActive');
+    }
+
+
+    const getFilter = (e) => {
+        if (e.target.dataset) {
+            switch (e.target.dataset.text) {
+                case 'stock':
+                    groceryCardsList.innerHTML = getMarkup(fruit.filter(item => item.stock));
+                    break;
+                case 'max':
+                    // groceryCardsList.innerHTML = getMarkup(fruitSet);
+                    break;
+                case 'min':
+                    // groceryCardsList.innerHTML = getMarkup(berries);
+                    break;
+                default:
+                    break;
+            }
+        }
     }
     headerList.addEventListener('click', linkActiveMain);
     groceryCards.addEventListener('click', filterActive);
+    listFunction.addEventListener('click', getFilter);
 }
 
 export default header;
