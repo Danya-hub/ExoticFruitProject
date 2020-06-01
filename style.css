@@ -68,32 +68,57 @@ img {
 }
 
 .header__list,
-.header>div:not(.header__logo):not(.header__hamburgerMenu) {
+.header>div:not(.header__logo):not(.header__hamburgerMenu-block) {
     display: none;
 }
 
 .header__hamburgerMenu {
+    background: url(./assets/logo/burgerMenu.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
     border: none;
-    background: none;
     outline: none;
     cursor: pointer;
 }
 
-.header__hamburgerMenu-img {
-    width: 40px;
-    height: 40px;
+.header__hamburgerMenu-block {
+    display: none;
+    position: fixed;
+    background-color: beige;
+    border-bottom: 2px solid rgb(229, 186, 130, 0.6);
+    border-bottom-left-radius: 1em;
+    border-left: 2px solid rgb(229, 186, 130, 0.6);
+    width: 250px;
+    height: 400px;
+    right: 0;
+    top: 0;
+    z-index: 99;
+}
+
+.header__hamburgerMenu-block-close {
+    display: block;
+    margin-left: auto;
+    width: 25px;
+    height: 25px;
+}
+
+.header__hamburgerMenu-block-close-span {
+    font-size: 20px;
+    color: rgb(229, 186, 130);
 }
 
 .header>div:nth-child(n+4) img {
     width: 40px;
     height: 40px;
-    cursor: pointer;
 }
 
 .header>div:nth-child(n+4) button {
     border: none;
     background: none;
     outline: none;
+    cursor: pointer;
 }
 
 /* ----------======= groceryCards =======---------- */
@@ -307,7 +332,9 @@ img {
 
 /* ----------======= @media =======---------- */
 
-@media (min-width: 768px) { /*1*/
+@media (min-width: 768px) {
+
+    /*1*/
     .header {
         padding: 0 40px;
     }
@@ -324,8 +351,10 @@ img {
     }
 }
 
-@media (min-width: 1100px) { /*2*/
-    .header>div:not(.header__logo):not(.header__hamburgerMenu) {
+@media (min-width: 1100px) {
+
+    /*2*/
+    .header>div:not(.header__logo):not(.header__hamburgerMenu-block) {
         display: flex;
         justify-content: space-between;
     }
@@ -381,7 +410,9 @@ img {
     }
 }
 
-@media (min-width: 679px) { /*3*/
+@media (min-width: 679px) {
+
+    /*3*/
     .groceryCards__list-item {
         border: unset;
         transition: .5s;
@@ -402,14 +433,18 @@ img {
     }
 }
 
-@media (max-width: 679px) { /*4*/
+@media (max-width: 679px) {
+
+    /*4*/
     .groceryCards__list-item:last-child {
         border-bottom: unset;
         padding-bottom: 0;
     }
 }
 
-@media (min-width: 1400px) { /*5*/
+@media (min-width: 1400px) {
+
+    /*5*/
     .header {
         position: unset;
     }
@@ -453,7 +488,9 @@ img {
     }
 }
 
-@media (min-width: 2050px) { /*6*/
+@media (min-width: 2050px) {
+
+    /*6*/
     .groceryCards__list {
         margin: 0 40px;
         max-width: 2300px;

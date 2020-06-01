@@ -17,6 +17,9 @@ const header = () => {
     const groceryCardsMenu = document.querySelector('.groceryCards__menuBlock'); //div
     const groceryCards = document.querySelector('.groceryCards__menu'); //div
     const listFunction = document.querySelector('.groceryCards__menuBlock-listFunction'); //ul
+    const hamburgerMenu = document.querySelector('.header__hamburgerMenu'); //button
+    const hamburgerMenuBlockActive = document.querySelector('.header__hamburgerMenu-block'); //div
+    const hamburgerMenuClose = document.querySelector('.header__hamburgerMenu-block-close'); //div
     // console.log(spanTextSale);
 
     const getMarkup = (array) => {
@@ -111,6 +114,23 @@ const header = () => {
             }
         }
     }
+
+    hamburgerMenu.onclick = function() {
+        hamburgerMenuBlockActive.style.display = 'block';
+        pushInfoHeader();
+    }
+
+    hamburgerMenuClose.onclick = function() {
+        hamburgerMenuBlockActive.style.display = 'none';
+    }
+
+    const pushInfoHeader = () => {
+        const pushInfo = document.querySelectorAll('.header>div:not(.header__logo):not(.header__hamburgerMenu-block)');
+        const blockInfo = document.querySelector('.header__hamburgerMenu-blockInfo');
+        
+        // blockInfo.innerHTML = pushInfo;
+    }
+
     headerList.addEventListener('click', linkActiveMain);
     groceryCards.addEventListener('click', filterActive);
     listFunction.addEventListener('click', getFilter);
