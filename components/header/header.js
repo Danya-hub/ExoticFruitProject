@@ -7,8 +7,17 @@ import {
 } from "../../data.js";
 
 const pageInfo = {
-    currentPage: '',
+    currentPage: 'fruit'
 }
+
+const fromMinToMax = (a, b) => {
+    return a.price - b.price;
+  }
+
+  const fromMaxToMin = (a, b) => {
+    return b.price - a.price;
+  }
+  
 
 const header = () => {
     const headerList = document.querySelector('.header__list'); //ul
@@ -16,10 +25,8 @@ const header = () => {
     const aboutPage = document.querySelector('.groceryCards__aboutPage'); //div
     const groceryCardsMenu = document.querySelector('.groceryCards__menuBlock'); //div
     const groceryCards = document.querySelector('.groceryCards__menu'); //div
-    const listFunction = document.querySelector('.groceryCards__menuBlock-listFunction'); //ul
-    const hamburgerMenu = document.querySelector('.header__hamburgerMenu'); //button
-    const hamburgerMenuBlockActive = document.querySelector('.header__hamburgerMenu-block'); //div
-    const hamburgerMenuClose = document.querySelector('.header__hamburgerMenu-block-close'); //div
+    const listFilter = document.querySelector('.groceryCards__menuBlock-listFilter'); //ul
+    const menuBlockTitle = document.querySelector('.groceryCards__menuBlock-title'); //h2
     // console.log(spanTextSale);
 
     const getMarkup = (array) => {
@@ -59,12 +66,15 @@ const header = () => {
             switch (e.target.dataset.link) {
                 case 'fruit':
                     groceryCardsList.innerHTML = getMarkup(fruit);
+                    pageInfo.currentPage = 'fruit';
                     break;
                 case 'fruitSet':
                     groceryCardsList.innerHTML = getMarkup(fruitSet);
+                    pageInfo.currentPage = 'fruitSet';
                     break;
                 case 'berries':
                     groceryCardsList.innerHTML = getMarkup(berries);
+                    pageInfo.currentPage = 'berries';
                     break;
                 case 'about':
                     aboutPage.classList.add('groceryCards__aboutPageActive');
@@ -85,15 +95,12 @@ const header = () => {
 
     const filterActive = (e) => {
         // groceryCardsMenu.classList.toggle('changeHeight');
-        // listFunction.classList.toggle('groceryCards__menuBlock-listFunctionActive');
+        // listFilter.classList.toggle('groceryCards__menuBlock-listFilterActive');
         // spanText.classList.toggle('groceryCards__menuBlock-spanActive');
         // spanText.map(el => console.log(el));
-        if (e.target === e.currentTarget) {
-            return
-        }
-        console.log(e.currentTarget);
+        // console.log(e.currentTarget);
         groceryCardsMenu.classList.toggle('changeHeight');
-        listFunction.classList.toggle('groceryCards__menuBlockActive');
+        listFilter.classList.toggle('groceryCards__menuBlockActive');
     }
 
 
@@ -101,13 +108,49 @@ const header = () => {
         if (e.target.dataset) {
             switch (e.target.dataset.text) {
                 case 'stock':
-                    groceryCardsList.innerHTML = getMarkup(fruit.filter(item => item.stock));
+                    switch (pageInfo.currentPage) {
+                        case 'fruit':
+                            groceryCardsList.innerHTML = getMarkup(fruit.filter(item => item.stock));
+                            break;
+                        case 'fruitSet':
+                            groceryCardsList.innerHTML = getMarkup(fruitSet.filter(item => item.stock));
+                            break;
+                        case 'berries':
+                            
+                            break; 
+                        default:
+                            break;
+                    }
                     break;
                 case 'max':
-                    // groceryCardsList.innerHTML = getMarkup(fruitSet);
+                    switch (pageInfo.currentPage) {
+                        case 'fruit':
+                            groceryCardsList.innerHTML = getMarkup(fruit.sort(fromMinToMax));
+                            break;
+                        case 'fruitSet':
+                            groceryCardsList.innerHTML = getMarkup(fruitSet.sort(fromMinToMax));
+                            break;
+                        case 'berries':
+                            groceryCardsList.innerHTML = getMarkup(berries.sort(fromMinToMax));
+                            break;
+                        default:
+                            break;
+                    }
                     break;
                 case 'min':
-                    // groceryCardsList.innerHTML = getMarkup(berries);
+                    switch (pageInfo.currentPage) {
+                        case 'fruit':
+                            groceryCardsList.innerHTML = getMarkup(fruit.sort(fromMaxToMin));
+                            break;
+                        case 'fruitSet':
+                            groceryCardsList.innerHTML = getMarkup(fruitSet.sort(fromMaxToMin));
+                            break;
+                        case 'berries':
+                            groceryCardsList.innerHTML = getMarkup(berries.sort(fromMaxToMin));
+                            break;
+                        default:
+                            break;
+                    }
                     break;
                 default:
                     break;
@@ -115,23 +158,9 @@ const header = () => {
         }
     }
 
-    hamburgerMenu.onclick = function() {
-        hamburgerMenuBlockActive.style.display = 'block';
-        pushInfoHeader();
-    }
-
-    hamburgerMenuClose.onclick = function() {
-        hamburgerMenuBlockActive.style.display = 'none';
-    }
-
-    const pushInfoHeader = () => {
-        const pushInfo = document.querySelectorAll('.header>div:not(.header__logo):not(.header__hamburgerMenu-block)');
-        const blockInfo = document.querySelector('.header__hamburgerMenu-blockInfo');
-    }
-
     headerList.addEventListener('click', linkActiveMain);
-    groceryCards.addEventListener('click', filterActive);
-    listFunction.addEventListener('click', getFilter);
+    menuBlockTitle.addEventListener('click', filterActive);
+    listFilter.addEventListener('click', getFilter);
 }
 
 export default header;

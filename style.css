@@ -73,6 +73,7 @@ img {
 }
 
 .header__hamburgerMenu {
+    position: relative;
     background: url(./assets/logo/burgerMenu.svg);
     background-size: 100%;
     background-repeat: no-repeat;
@@ -83,9 +84,17 @@ img {
     cursor: pointer;
 }
 
-.header__hamburgerMenu-block {
+/* .header__hamburgerMenu::after {
+    content: '✖';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 0;
+} */
+
+.hamburgerMenuActive {
     display: none;
-    position: fixed;
+    /* position: fixed;
     background-color: beige;
     border-bottom: 2px solid rgb(229, 186, 130, 0.6);
     border-bottom-left-radius: 1em;
@@ -94,7 +103,7 @@ img {
     height: 400px;
     right: 0;
     top: 0;
-    z-index: 99;
+    z-index: 999; */
 }
 
 .header__hamburgerMenu-block-close {
@@ -144,19 +153,22 @@ img {
     text-align: center;
 }
 
-.groceryCards__menuBlock-listFunction-item {
+.groceryCards__menuBlock-listFilter-item {
     border-top: 2px solid rgb(229, 186, 130, 0.6);
     border-bottom: unset;
     padding: 10px 0 10px 10px;
     transition: .5s;
 }
 
-.groceryCards__menuBlock-listFunction-item-text {
+.groceryCards__menuBlock-listFilter-item-text {
+    display: block;
     font: 100 16px 'FuturaPT-Medium';
     background: linear-gradient(to right, rgb(0, 175, 0) 20%, rgb(0, 224, 0));
     transition: .5s;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    width: 100%;
+    height: 100%;
 }
 
 .groceryCards>div:not(.groceryCards__aboutPage) {
@@ -172,7 +184,20 @@ img {
     max-width: 1700px;
 }
 
+/* .groceryCards__list-item::before {
+    content: '';
+    position: absolute;
+    background-color: transparent;
+    border: 2px solid #000;
+    transform: rotate(45deg);
+    width: 20px;
+    height: 20px;
+    left: -1.7em;
+    bottom: -0.8em;
+} */
+
 .groceryCards__list-item {
+    /* position: relative; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -182,6 +207,22 @@ img {
     padding: 17px 0;
     border-radius: unset;
     transition-duration: unset;
+}
+
+/* .groceryCards__list-item::after {
+    content: '';
+    position: absolute;
+    background-color: transparent;
+    border: 2px solid #000;
+    transform: rotate(45deg);
+    width: 20px;
+    height: 20px;
+    right: -1.7em;
+    bottom: -0.84em;
+} */
+
+.groceryCards__list-item:last-child {
+    border-bottom: unset;
 }
 
 .groceryCards__list-item:hover {
@@ -257,12 +298,12 @@ img {
     margin: auto;
 } */
 
-.groceryCards__menuBlock-listFunction {
+.groceryCards__menuBlock-listFilter {
     display: none;
     transition: all 1s ease-in;
 }
 
-.groceryCards__menuBlock-listFunctionActive {
+.groceryCards__menuBlock-listFilterActive {
     display: block;
 }
 
@@ -408,7 +449,6 @@ img {
 
 @media (min-width: 679px) { /*4*/
     .groceryCards__list-item {
-        border: unset;
         transition: .5s;
         border-radius: 10px;
     }
@@ -427,7 +467,7 @@ img {
     }
 }
 
-@media (min-width: 430px) { /*5*/
+@media (min-width: 430px) { 
     .groceryCards__list-item {
         border-bottom: unset;
     }
@@ -444,13 +484,13 @@ img {
         margin: 30px 0;
     }
 
-    .groceryCards__menuBlock-listFunction-item {
+    .groceryCards__menuBlock-listFilter-item {
         border-bottom: 2px solid rgb(229, 186, 130, 0.6);
         border-top: unset;
         cursor: pointer;
     }
 
-    .groceryCards__menuBlock-listFunction-item:hover {
+    .groceryCards__menuBlock-listFilter-item:hover {
         background-color: rgb(228, 228, 205);
     }
 
@@ -467,7 +507,7 @@ img {
         cursor: unset;
     }
 
-    .groceryCards__menuBlock-listFunction {
+    .groceryCards__menuBlock-listFilter {
         display: unset;
     }
 
