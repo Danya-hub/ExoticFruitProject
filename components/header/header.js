@@ -18,7 +18,6 @@ const fromMinToMax = (a, b) => {
     return b.price - a.price;
   }
   
-
 const header = () => {
     const headerList = document.querySelector('.header__list'); //ul
     const groceryCardsList = document.querySelector('.groceryCards__list'); //ul
@@ -27,6 +26,8 @@ const header = () => {
     const groceryCards = document.querySelector('.groceryCards__menu'); //div
     const listFilter = document.querySelector('.groceryCards__menuBlock-listFilter'); //ul
     const menuBlockTitle = document.querySelector('.groceryCards__menuBlock-title'); //h2
+    const hamburgerMenu = document.querySelector('.header__hamburgerMenu'); //button
+    const hamburgerMenuBlock = document.querySelector('.header__hamburgerMenuBlock'); //div
     // console.log(spanTextSale);
 
     const getMarkup = (array) => {
@@ -93,7 +94,7 @@ const header = () => {
         }
     }
 
-    const filterActive = (e) => {
+    const filterActive = () => {
         // groceryCardsMenu.classList.toggle('changeHeight');
         // listFilter.classList.toggle('groceryCards__menuBlock-listFilterActive');
         // spanText.classList.toggle('groceryCards__menuBlock-spanActive');
@@ -105,6 +106,7 @@ const header = () => {
 
 
     const getFilter = (e) => {
+        // console.dir(window.innerWidth);
         if (e.target.dataset) {
             switch (e.target.dataset.text) {
                 case 'stock':
@@ -116,7 +118,7 @@ const header = () => {
                             groceryCardsList.innerHTML = getMarkup(fruitSet.filter(item => item.stock));
                             break;
                         case 'berries':
-                            
+                            groceryCardsList.innerHTML = `<li>null stock</li>`;
                             break; 
                         default:
                             break;
@@ -158,9 +160,20 @@ const header = () => {
         }
     }
 
+    const openHamburger = () => {
+        const hamburgerMenuBlockClose = document.querySelector('.header__hamburgerMenuBlock-buttonClose');
+        const close = () => {
+            hamburgerMenuBlock.classList.remove('burgerMenuActive');
+            hamburgerMenuBlockClose.removeEventListener('click', close);
+        }
+        hamburgerMenuBlock.classList.add('burgerMenuActive');
+        hamburgerMenuBlockClose.addEventListener('click', close);
+    }
+
     headerList.addEventListener('click', linkActiveMain);
     menuBlockTitle.addEventListener('click', filterActive);
     listFilter.addEventListener('click', getFilter);
+    hamburgerMenu.addEventListener('click', openHamburger);
 }
 
 export default header;
