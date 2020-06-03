@@ -467,7 +467,7 @@ img {
     }
 }
 
-@media (min-width: 430px) { 
+@media (min-width: 430px) { /*5*/
     .groceryCards__list-item {
         border-bottom: unset;
     }
