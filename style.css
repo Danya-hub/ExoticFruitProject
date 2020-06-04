@@ -21,7 +21,6 @@ img {
 }
 
 /* ----------======= header =======---------- */
-
 .header {
     position: relative;
     display: flex;
@@ -92,6 +91,7 @@ img {
     right: 10px;
 }
 
+.header__additionalFeaturesBlock,
 .header__socialNetworks {
     display: flex;
     justify-content: space-between;
@@ -100,7 +100,7 @@ img {
 
 .header__hamburgerMenuBlock {
     display: none;
-    position: absolute;
+    position: fixed;
     background-color: beige;
     border-bottom: 2px solid rgb(229, 186, 130, 0.6);
     border-bottom-left-radius: 1em;
@@ -113,12 +113,19 @@ img {
 }
 
 .burgerMenuActive {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    display: block;
 }
 
+.header__innerBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 60%;
+    margin-top: 15px;
+}
+
+.header__additionalFeaturesBlock img,
 .header>div:nth-child(n+4):not(.header__hamburgerMenuBlock) img {
     width: 40px;
     height: 40px;
@@ -143,7 +150,17 @@ img {
     display: block;
 }
 
-.groceryCard__menuActive {
+.groceryCards__aboutPage-logoFruit-img {
+    width: 200px;
+    margin: 0 auto;
+}
+
+
+.groceryCards__aboutPage-text {
+    margin: 40px 30px;
+}
+
+.groceryCards__menuActive {
     display: none !important;
 }
 
@@ -171,6 +188,51 @@ img {
     -webkit-text-fill-color: transparent;
     width: 100%;
     height: 100%;
+}
+
+.groceryCards__menuBlock {
+    position: absolute;
+    background-color: beige;
+    transition: .3s;
+    border-top-right-radius: unset;
+    border-right: 2px solid rgb(229, 186, 130, 0.6);
+    border-left: 2px solid rgb(229, 186, 130, 0.6);
+    border-bottom: 2px solid rgb(229, 186, 130, 0.6);
+    border-bottom-right-radius: 1em;
+    border-bottom-left-radius: 1em;
+    width: 200px;
+    height: 40px;
+    left: 0;
+    right: 0;
+    top: 6.8em;
+    margin: auto;
+    z-index: 1;
+}
+
+/* .groceryCards__menuBlock::after {
+    content: '';
+    position: absolute;
+    background: url(./components/header/assets/logo/apple.svg) center no-repeat;
+    background-size: 100%;
+    width: 80px;
+    height: 80px;
+    left: 0;
+    right: 0;
+    bottom: 2.5em;
+    margin: auto;
+} */
+
+.groceryCards__menuBlock-listFilter {
+    display: none;
+    transition: all 1s ease-in;
+}
+
+.groceryCards__menuBlock-listFilterActive {
+    display: block;
+}
+
+.groceryCards__menuBlockActive {
+    display: block;
 }
 
 .groceryCards>div:not(.groceryCards__aboutPage) {
@@ -253,51 +315,6 @@ img {
     align-items: center;
 }
 
-.groceryCards__menuBlock {
-    position: absolute;
-    background-color: beige;
-    transition: .3s;
-    border-top-right-radius: unset;
-    border-right: 2px solid rgb(229, 186, 130, 0.6);
-    border-left: 2px solid rgb(229, 186, 130, 0.6);
-    border-bottom: 2px solid rgb(229, 186, 130, 0.6);
-    border-bottom-right-radius: 1em;
-    border-bottom-left-radius: 1em;
-    width: 200px;
-    height: 40px;
-    left: 0;
-    right: 0;
-    top: 6.8em;
-    margin: auto;
-    z-index: 1;
-}
-
-/* .groceryCards__menuBlock::after {
-    content: '';
-    position: absolute;
-    background: url(./components/header/assets/logo/apple.svg) center no-repeat;
-    background-size: 100%;
-    width: 80px;
-    height: 80px;
-    left: 0;
-    right: 0;
-    bottom: 2.5em;
-    margin: auto;
-} */
-
-.groceryCards__menuBlock-listFilter {
-    display: none;
-    transition: all 1s ease-in;
-}
-
-.groceryCards__menuBlock-listFilterActive {
-    display: block;
-}
-
-.groceryCards__menuBlockActive {
-    display: block;
-}
-
 .header__berreisStock-title,
 .groceryCards__aboutPage-mainTitle {
     font: 600 35px 'FuturaPTCond-Book';
@@ -310,18 +327,9 @@ img {
     margin: 30px auto 0 auto;
 }
 
-.groceryCards__aboutPage-text {
-    margin: 40px 30px;
-}
-
 .header__berreisStock-text,
 .groceryCards__aboutPage-text-p {
     font: 100 23px 'FuturaPTCond-Book';
-}
-
-.groceryCards__aboutPage-logoFruit-img {
-    width: 200px;
-    margin: 0 auto;
 }
 
 /* ----------======= footer =======---------- */
@@ -366,7 +374,9 @@ img {
 
 /* ----------======= @media =======---------- */
 
-@media (min-width: 768px) { /*1*/
+@media (min-width: 768px) {
+
+    /*1*/
     .header {
         padding: 0 40px;
     }
@@ -383,7 +393,9 @@ img {
     }
 }
 
-@media (min-width: 1100px) { /*2*/
+@media (min-width: 1100px) {
+
+    /*2*/
     .header__socialNetworks,
     .header>div:not(.header__logo):not(.header__hamburgerMenuBlock) {
         display: flex;
@@ -404,7 +416,9 @@ img {
     }
 }
 
-@media (min-width: 1950px) { /*3*/
+@media (min-width: 1950px) {
+
+    /*3*/
     .header {
         height: 130px;
     }
@@ -437,13 +451,16 @@ img {
         height: 25px;
     }
 
+    .header__additionalFeaturesBlock img,
     .header>div:nth-child(n+4) img {
         width: 50px;
         height: 50px;
     }
 }
 
-@media (min-width: 679px) { /*4*/
+@media (min-width: 679px) {
+
+    /*4*/
     .groceryCards__list-item {
         transition: .5s;
         border-radius: 10px;
@@ -463,13 +480,17 @@ img {
     }
 }
 
-@media (min-width: 430px) { /*5*/
+@media (min-width: 430px) {
+
+    /*5*/
     .groceryCards__list-item {
         border-bottom: unset;
     }
 }
 
-@media (min-width: 1400px) { /*6*/
+@media (min-width: 1400px) {
+
+    /*6*/
     .header {
         position: unset;
     }
@@ -513,7 +534,9 @@ img {
     }
 }
 
-@media (min-width: 2050px) { /*7*/
+@media (min-width: 2050px) {
+
+    /*7*/
     .groceryCards__list {
         max-width: 2300px;
     }

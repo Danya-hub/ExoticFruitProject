@@ -58,7 +58,7 @@ const header = () => {
     groceryCardsMenu.classList.add('groceryCards__menuBlockActive');
 
     const linkActiveMain = (e) => {
-        groceryCards.classList.remove('groceryCard__menuActive');
+        groceryCards.classList.remove('groceryCards__menuActive');
         aboutPage.classList.remove('groceryCards__aboutPageActive');
         groceryCardsMenu.classList.add('groceryCards__menuBlockActive');
         groceryCardsList.classList.remove('groceryCards__listBerriesActive');
@@ -67,23 +67,20 @@ const header = () => {
         } else {
             switch (e.target.dataset.link) {
                 case 'fruit':
-                    // groceryCardsList.style.display = 'grid';
                     groceryCardsList.innerHTML = getMarkup(fruit);
                     pageInfo.currentPage = 'fruit';
                     break;
                 case 'fruitSet':
-                    // groceryCardsList.style.display = 'grid';
                     groceryCardsList.innerHTML = getMarkup(fruitSet);
                     pageInfo.currentPage = 'fruitSet';
                     break;
                 case 'berries':
-                    // groceryCardsList.style.display = 'grid';
                     groceryCardsList.innerHTML = getMarkup(berries);
                     pageInfo.currentPage = 'berries';
                     break;
                 case 'about':
                     aboutPage.classList.add('groceryCards__aboutPageActive');
-                    groceryCards.classList.add('groceryCard__menuActive');
+                    groceryCards.classList.add('groceryCards__menuActive');
                     groceryCardsMenu.classList.remove('groceryCards__menuBlockActive');
                     groceryCardsList.innerHTML = '';
                     break;
