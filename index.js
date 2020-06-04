@@ -1,7 +1,7 @@
 'use strict';
 
 import header from './components/header/header.js';
-import { createSocialLink } from './headerServices/headerServices.js';
+import { createSocialLink } from './hamburgerMenu/hamburgerMenu.js';
 const body = document.querySelector('body')
 
 if (body.offsetWidth >= 1100) {

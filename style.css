@@ -75,9 +75,8 @@ img {
 
 .header__hamburgerMenu {
     position: relative;
-    background: url(./assets/logo/burgerMenu.svg);
+    background: url(./assets/logo/burgerMenu.svg) center no-repeat;
     background-size: 100%;
-    background-repeat: no-repeat;
     width: 40px;
     height: 40px;
     border: none;
@@ -87,8 +86,16 @@ img {
 
 .header__hamburgerMenuBlock-buttonClose {
     position: absolute;
+    color: rgb(229, 186, 130);
+    font-weight: 900;
     top: 10px;
     right: 10px;
+}
+
+.header__socialNetworks {
+    display: flex;
+    justify-content: space-between;
+    width: 110px;
 }
 
 .header__hamburgerMenuBlock {
@@ -106,10 +113,13 @@ img {
 }
 
 .burgerMenuActive {
-    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
-.header>div:nth-child(n+4) img {
+.header>div:nth-child(n+4):not(.header__hamburgerMenuBlock) img {
     width: 40px;
     height: 40px;
 }
@@ -126,6 +136,7 @@ img {
 .groceryCards__aboutPage {
     display: none;
     margin-top: 50px;
+    text-align: center;
 }
 
 .groceryCards__aboutPageActive {
@@ -173,6 +184,15 @@ img {
     justify-content: center;
     min-width: 320px;
     max-width: 1700px;
+    margin: 0 auto;
+}
+
+.groceryCards__listBerriesActive {
+    display: block;
+}
+
+.header__groceryCards-list-berreisStock {
+    text-align: center;
 }
 
 .groceryCards__list-item {
@@ -278,19 +298,25 @@ img {
     display: block;
 }
 
+.header__berreisStock-title,
 .groceryCards__aboutPage-mainTitle {
     font: 600 35px 'FuturaPTCond-Book';
     text-transform: uppercase;
-    text-align: center;
+}
+
+.header__berreisStock-imgSleepingMan {
+    width: 250px;
+    height: 200px;
+    margin: 30px auto 0 auto;
 }
 
 .groceryCards__aboutPage-text {
     margin: 40px 30px;
 }
 
+.header__berreisStock-text,
 .groceryCards__aboutPage-text-p {
     font: 100 23px 'FuturaPTCond-Book';
-    text-align: center;
 }
 
 .groceryCards__aboutPage-logoFruit-img {
@@ -489,7 +515,6 @@ img {
 
 @media (min-width: 2050px) { /*7*/
     .groceryCards__list {
-        margin: 0 40px;
         max-width: 2300px;
     }
 }

@@ -61,19 +61,23 @@ const header = () => {
         groceryCards.classList.remove('groceryCard__menuActive');
         aboutPage.classList.remove('groceryCards__aboutPageActive');
         groceryCardsMenu.classList.add('groceryCards__menuBlockActive');
+        groceryCardsList.classList.remove('groceryCards__listBerriesActive');
         if (e.target === e.currentTarget) {
             return
         } else {
             switch (e.target.dataset.link) {
                 case 'fruit':
+                    // groceryCardsList.style.display = 'grid';
                     groceryCardsList.innerHTML = getMarkup(fruit);
                     pageInfo.currentPage = 'fruit';
                     break;
                 case 'fruitSet':
+                    // groceryCardsList.style.display = 'grid';
                     groceryCardsList.innerHTML = getMarkup(fruitSet);
                     pageInfo.currentPage = 'fruitSet';
                     break;
                 case 'berries':
+                    // groceryCardsList.style.display = 'grid';
                     groceryCardsList.innerHTML = getMarkup(berries);
                     pageInfo.currentPage = 'berries';
                     break;
@@ -107,6 +111,7 @@ const header = () => {
 
     const getFilter = (e) => {
         // console.dir(window.innerWidth);
+        groceryCardsList.classList.remove('groceryCards__listBerriesActive');
         if (e.target.dataset) {
             switch (e.target.dataset.text) {
                 case 'stock':
@@ -118,7 +123,13 @@ const header = () => {
                             groceryCardsList.innerHTML = getMarkup(fruitSet.filter(item => item.stock));
                             break;
                         case 'berries':
-                            groceryCardsList.innerHTML = `<li>null stock</li>`;
+                            // groceryCardsList.style.display = 'block';
+                            groceryCardsList.classList.add('groceryCards__listBerriesActive');
+                            groceryCardsList.innerHTML = `<li class="header__groceryCards-list-berreisStock">
+                            <h2 class="header__berreisStock-title">Почему тут ничего не находится?</h2>
+                            <p class="header__berreisStock-text">Очень обидно, что тут ничего не появилось. Надеемся на появления чуда.</p>
+                            <img src="./components/header/assets/logo/sleeping man.svg" class="header__berreisStock-imgSleepingMan"></img>
+                            </li>`;
                             break; 
                         default:
                             break;
