@@ -20,7 +20,15 @@ img {
     height: auto;
 }
 
+button {
+    border: unset;
+    outline: unset;
+    cursor: pointer;
+    background: unset;
+}
+
 /* ----------======= header =======---------- */
+
 .header {
     position: relative;
     display: flex;
@@ -67,20 +75,28 @@ img {
     border-radius: 6px;
 }
 
-.header__list,
-.header>div:not(.header__logo):not(.header__hamburgerMenuBlock) {
-    display: none;
-}
-
-.header__hamburgerMenu {
-    position: relative;
-    background: url(./assets/logo/burgerMenu.svg) center no-repeat;
-    background-size: 100%;
+.header__hamburgerMenu-img {
     width: 40px;
     height: 40px;
-    border: none;
-    outline: none;
-    cursor: pointer;
+}
+
+.header__modalIconCart {
+    display: none;
+    position: fixed;
+    background-color: #fff;
+    border: 2px solid #000;
+    width: 400px;
+    height: 400px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 999;
+}
+
+.modalIconCartActive {
+    display: block;
 }
 
 .header__hamburgerMenuBlock-buttonClose {
@@ -107,7 +123,7 @@ img {
     height: 100vh;
     right: 0;
     top: 0;
-    z-index: 999;
+    z-index: 998;
 }
 
 .burgerMenuActive {
@@ -127,13 +143,6 @@ img {
 .header>div:nth-child(n+4):not(.header__hamburgerMenuBlock) img {
     width: 40px;
     height: 40px;
-}
-
-.header>div:nth-child(n+4) button {
-    border: none;
-    background: none;
-    outline: none;
-    cursor: pointer;
 }
 
 /* ----------======= groceryCards =======---------- */
@@ -207,19 +216,6 @@ img {
     z-index: 1;
 }
 
-/* .groceryCards__menuBlock::after {
-    content: '';
-    position: absolute;
-    background: url(./components/header/assets/logo/apple.svg) center no-repeat;
-    background-size: 100%;
-    width: 80px;
-    height: 80px;
-    left: 0;
-    right: 0;
-    bottom: 2.5em;
-    margin: auto;
-} */
-
 .groceryCards__menuBlock-listFilter {
     display: none;
     transition: all 1s ease-in;
@@ -289,13 +285,6 @@ img {
 .groceryCards__list-item-priceThrough {
     text-decoration: line-through;
     margin-right: 10px;
-}
-
-.groceryCards__list-item-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    outline: none;
 }
 
 .groceryCards__list-item-price-span {
@@ -409,7 +398,7 @@ img {
         width: 500px;
     }
 
-    .header__hamburgerMenu {
+    .header__hamburgerMenu-button {
         display: none;
     }
 }
@@ -510,8 +499,6 @@ img {
     }
 
     .groceryCards__menuBlock-listFilter-item {
-        border-bottom: 2px solid rgb(229, 186, 130, 0.6);
-        border-top: unset;
         cursor: pointer;
     }
 
@@ -526,7 +513,7 @@ img {
         border-bottom-left-radius: unset;
         border-top-right-radius: 1em;
         border-left: unset;
-        height: 300px;
+        height: 100%;
         margin: 0;
         left: 0;
         cursor: unset;
@@ -537,7 +524,6 @@ img {
     }
 
     .groceryCards__menuBlock-title {
-        border-bottom: 2px solid rgb(229, 186, 130, 0.6);
         cursor: unset;
     }
 }

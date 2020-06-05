@@ -6,32 +6,48 @@ import {
     berries
 } from "../../data.js";
 
+import {
+    addProductCart
+} from '../cart/cart.js';
+
+import {
+    createSocialLink,
+    creatAdditionalFeatures,
+    createListLink
+} from '../../hamburgerMenu/hamburgerMenu.js';
+
+import {
+    creatModalIcon
+} from '../cart/modalIcon.js';
+
 const pageInfo = {
     currentPage: 'fruit'
 }
 
 const fromMinToMax = (a, b) => {
     return a.price - b.price;
-  }
+}
 
-  const fromMaxToMin = (a, b) => {
+const fromMaxToMin = (a, b) => {
     return b.price - a.price;
-  }
-  
+}
+
 const header = () => {
-    const headerList = document.querySelector('.header__list'); //ul
     const groceryCardsList = document.querySelector('.groceryCards__list'); //ul
     const aboutPage = document.querySelector('.groceryCards__aboutPage'); //div
     const groceryCardsMenu = document.querySelector('.groceryCards__menuBlock'); //div
     const groceryCards = document.querySelector('.groceryCards__menu'); //div
     const listFilter = document.querySelector('.groceryCards__menuBlock-listFilter'); //ul
     const menuBlockTitle = document.querySelector('.groceryCards__menuBlock-title'); //h2
-    const hamburgerMenu = document.querySelector('.header__hamburgerMenu'); //button
+    const hamburgerMenu = document.querySelector('.header__hamburgerMenu-button'); //button
     const hamburgerMenuBlock = document.querySelector('.header__hamburgerMenuBlock'); //div
-    // console.log(spanTextSale);
+    const cartButton = document.querySelector('.header__cart-button'); //button
+    const modalIconCartBlock = document.querySelector('.header__modalIconCartBlock'); //div
+    const header__innerSocial = document.querySelector('.header__innerSocial'); //div
+    const header__additionalFeatures = document.querySelector('.header__additionalFeatures'); //div
+    const body = document.querySelector('body'); //body
 
     const getMarkup = (array) => {
-        // console.dir(array);
         let markup = '';
         for (const item of array) {
             markup += `
@@ -46,7 +62,7 @@ const header = () => {
                         <span class="groceryCards__list-item-stock-span">${item.stock ? item.stock : ''}${item.stock ? (((item.category === 'fruit') || (item.category === 'fruitSet'))?'$/pcs':'$/kg') : ''}</span>
                     </p>
                     <button class="groceryCards__list-item-button">
-                        <img src="./components/header/assets/logo/cart.svg" alt="картинка" class="groceryCards__list-item-button-img">
+                        <img src="./components/header/assets/logo/cart.svg" alt="картинка" class="groceryCards__list-item-button-img" data-id="${item.id}" data-category="${item.category}" data-img="cart">
                     </button>
                 </div>
             </li>
@@ -65,49 +81,51 @@ const header = () => {
         if (e.target === e.currentTarget) {
             return
         } else {
+            const hamburgerMenuBlock = document.querySelector('.header__hamburgerMenuBlock');
             switch (e.target.dataset.link) {
                 case 'fruit':
                     groceryCardsList.innerHTML = getMarkup(fruit);
                     pageInfo.currentPage = 'fruit';
+                    if (hamburgerMenuBlock) {
+                        hamburgerMenuBlock.classList.remove('burgerMenuActive');
+                    }
                     break;
                 case 'fruitSet':
                     groceryCardsList.innerHTML = getMarkup(fruitSet);
                     pageInfo.currentPage = 'fruitSet';
+                    if (hamburgerMenuBlock) {
+                        hamburgerMenuBlock.classList.remove('burgerMenuActive');
+                    }
                     break;
                 case 'berries':
                     groceryCardsList.innerHTML = getMarkup(berries);
                     pageInfo.currentPage = 'berries';
+                    if (hamburgerMenuBlock) {
+                        hamburgerMenuBlock.classList.remove('burgerMenuActive');
+                    }
                     break;
                 case 'about':
                     aboutPage.classList.add('groceryCards__aboutPageActive');
                     groceryCards.classList.add('groceryCards__menuActive');
                     groceryCardsMenu.classList.remove('groceryCards__menuBlockActive');
                     groceryCardsList.innerHTML = '';
+                    if (hamburgerMenuBlock) {
+                        hamburgerMenuBlock.classList.remove('burgerMenuActive');
+                    }
                     break;
                 default:
                     break;
             }
-
-            // const headerListLinkActive = document.querySelector('.header__list-li-linkActive');
-            // headerListLinkActive && headerListLinkActive.classList.remove('headerListLinkActive');
-            // e.target.classList.add('headerListLinkActive');
-            // console.log(e.target.dataset.link);
         }
     }
 
     const filterActive = () => {
-        // groceryCardsMenu.classList.toggle('changeHeight');
-        // listFilter.classList.toggle('groceryCards__menuBlock-listFilterActive');
-        // spanText.classList.toggle('groceryCards__menuBlock-spanActive');
-        // spanText.map(el => console.log(el));
-        // console.log(e.currentTarget);
         groceryCardsMenu.classList.toggle('changeHeight');
         listFilter.classList.toggle('groceryCards__menuBlockActive');
     }
 
 
     const getFilter = (e) => {
-        // console.dir(window.innerWidth);
         groceryCardsList.classList.remove('groceryCards__listBerriesActive');
         if (e.target.dataset) {
             switch (e.target.dataset.text) {
@@ -120,14 +138,13 @@ const header = () => {
                             groceryCardsList.innerHTML = getMarkup(fruitSet.filter(item => item.stock));
                             break;
                         case 'berries':
-                            // groceryCardsList.style.display = 'block';
                             groceryCardsList.classList.add('groceryCards__listBerriesActive');
                             groceryCardsList.innerHTML = `<li class="header__groceryCards-list-berreisStock">
                             <h2 class="header__berreisStock-title">Почему тут ничего не находится?</h2>
                             <p class="header__berreisStock-text">Очень обидно, что тут ничего не появилось. Надеемся на появления чуда.</p>
                             <img src="./components/header/assets/logo/sleeping man.svg" class="header__berreisStock-imgSleepingMan"></img>
                             </li>`;
-                            break; 
+                            break;
                         default:
                             break;
                     }
@@ -168,6 +185,35 @@ const header = () => {
         }
     }
 
+    const getSiteBur = () => {
+        const innerBlock = document.querySelector('.header__innerBlock');
+        const navigation = document.querySelector('.navigation');
+        if ((body.offsetWidth >= 320) && (body.offsetWidth < 768)) {
+            console.log(createListLink());
+            innerBlock.insertAdjacentHTML('afterbegin', createSocialLink());
+            innerBlock.insertAdjacentHTML('beforeend', createListLink());
+            innerBlock.insertAdjacentHTML('beforeend', creatAdditionalFeatures());
+            document.querySelector('.header__list').addEventListener('click', linkActiveMain);
+        } else if ((body.offsetWidth >= 768) && (body.offsetWidth < 1100)) {
+            navigation.innerHTML = createListLink();
+            innerBlock.insertAdjacentHTML('afterbegin', createSocialLink());
+            innerBlock.insertAdjacentHTML('beforeend', creatAdditionalFeatures());
+            document.querySelector('.header__list').addEventListener('click', linkActiveMain);
+        } else if (body.offsetWidth >= 1100) {
+            navigation.innerHTML = createListLink();
+            header__innerSocial.insertAdjacentHTML('beforeend', createSocialLink());
+            header__additionalFeatures.insertAdjacentHTML('beforeend', creatAdditionalFeatures());
+            document.querySelector('.header__list').addEventListener('click', linkActiveMain);
+        } else {
+            const innerBlock = document.querySelector('.header__innerBlock');
+            innerBlock.insertAdjacentHTML('afterbegin', createSocialLink());
+            innerBlock.insertAdjacentHTML('afterbegin', creatAdditionalFeatures());
+            document.querySelector('.header__list').addEventListener('click', linkActiveMain);
+        }
+    }
+
+    getSiteBur();
+
     const openHamburger = () => {
         const hamburgerMenuBlockClose = document.querySelector('.header__hamburgerMenuBlock-buttonClose');
         const close = () => {
@@ -178,10 +224,41 @@ const header = () => {
         hamburgerMenuBlockClose.addEventListener('click', close);
     }
 
-    headerList.addEventListener('click', linkActiveMain);
-    menuBlockTitle.addEventListener('click', filterActive);
+    const addActiveCart = (e) => {
+        if (e.target.dataset.img) {
+            const category = e.target.dataset.category;
+            const id = e.target.dataset.id;
+            if (category === 'fruit') {
+                for (const item of fruit) {
+                    if (item.id === id) {
+                        addProductCart(item);
+                    }
+                }
+            }
+            if (category === 'fruitSet') {
+                for (const item of fruitSet) {
+                    if (item.id === id) {
+                        addProductCart(item);
+                    }
+                }
+            }
+            if (category === 'berries') {
+                for (const item of berries) {
+                    if (item.id === id) {
+                        addProductCart(item);
+                    }
+                }
+            }
+        } else return
+    }
+
+    // const openModalIconCart
+
+    menuBlockTitle.addEventListener('click', filterActive)
     listFilter.addEventListener('click', getFilter);
     hamburgerMenu.addEventListener('click', openHamburger);
+    groceryCardsList.addEventListener('click', addActiveCart);
+    // cartButton.addEventListener('click', openModalIconCart);
 }
 
 export default header;

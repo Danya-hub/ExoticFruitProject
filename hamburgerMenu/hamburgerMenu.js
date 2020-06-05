@@ -1,19 +1,21 @@
-// export const createListLink = () => {
-//     return `            
-//         <li class="header__list-item">
-//             <a href="#" data-link="fruit" class="header__list-item-linkFruit header__list-item-linkActive">Фрукты</a>
-//         </li>
-//         <li class="header__list-item">
-//             <a href="#" data-link="fruitSet" class="header__list-item-linkFruitSet">Фруктовый набор</a>
-//         </li>
-//         <li class="header__list-item">
-//             <a href="#" data-link="berries" class="header__list-item-linkBerries">Ягоды</a>
-//         </li>
-//         <li class="header__list-item">
-//             <a href="#" data-link="about" class="header__list-item-linkProject">О проекте</a>
-//         </li>
-//     `
-// }
+export const createListLink = () => {
+    return `
+    <ul class="header__list">      
+        <li class="header__list-item">
+            <a href="#" data-link="fruit" class="header__list-item-linkFruit header__list-item-linkActive">Фрукты</a>
+        </li>
+        <li class="header__list-item">
+            <a href="#" data-link="fruitSet" class="header__list-item-linkFruitSet">Фруктовый набор</a>
+        </li>
+        <li class="header__list-item">
+            <a href="#" data-link="berries" class="header__list-item-linkBerries">Ягоды</a>
+        </li>
+        <li class="header__list-item">
+            <a href="#" data-link="about" class="header__list-item-linkProject">О проекте</a>
+        </li>
+    </ul>
+    `
+}
 
 export const createSocialLink = () => {
     return `            
@@ -37,8 +39,8 @@ export const creatAdditionalFeatures = () => {
         <button class="header__userRegistration">
             <img src="./assets/logo/regist.svg" alt="картинка" class="header__userRegistration-img">
         </button>
-        <button class="header__basket">
-            <img src="./assets/logo/basket.svg" alt="картинка" class="header__basket-img">
+        <button class="header__cart">
+            <img src="./assets/logo/cartHeader.svg" alt="картинка" class="header__cart-img">
         </button>
     </div>
     `
