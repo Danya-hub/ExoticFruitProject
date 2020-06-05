@@ -41,6 +41,7 @@ export const creatAdditionalFeatures = () => {
         </button>
         <button class="header__cart">
             <img src="./assets/logo/cartHeader.svg" alt="картинка" class="header__cart-img">
+            <div class="productsInCart">0</div>
         </button>
     </div>
     `

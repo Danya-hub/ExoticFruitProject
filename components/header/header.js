@@ -17,7 +17,7 @@ import {
 } from '../../hamburgerMenu/hamburgerMenu.js';
 
 import {
-    creatModalIcon
+    openOrder
 } from '../cart/modalIcon.js';
 
 const pageInfo = {
@@ -141,7 +141,7 @@ const header = () => {
                             groceryCardsList.classList.add('groceryCards__listBerriesActive');
                             groceryCardsList.innerHTML = `<li class="header__groceryCards-list-berreisStock">
                             <h2 class="header__berreisStock-title">Почему тут ничего не находится?</h2>
-                            <p class="header__berreisStock-text">Очень обидно, что тут ничего не появилось. Надеемся на появления чуда.</p>
+                            <p class="header__berreisStock-text">Очень обидно, что тут ничего не появилось. Надеемся на появление чуда.</p>
                             <img src="./components/header/assets/logo/sleeping man.svg" class="header__berreisStock-imgSleepingMan"></img>
                             </li>`;
                             break;
@@ -194,21 +194,29 @@ const header = () => {
             innerBlock.insertAdjacentHTML('beforeend', createListLink());
             innerBlock.insertAdjacentHTML('beforeend', creatAdditionalFeatures());
             document.querySelector('.header__list').addEventListener('click', linkActiveMain);
+            const cartButton = document.querySelector('.header__cart');
+            cartButton.addEventListener('click', openOrder);
         } else if ((body.offsetWidth >= 768) && (body.offsetWidth < 1100)) {
             navigation.innerHTML = createListLink();
             innerBlock.insertAdjacentHTML('afterbegin', createSocialLink());
             innerBlock.insertAdjacentHTML('beforeend', creatAdditionalFeatures());
             document.querySelector('.header__list').addEventListener('click', linkActiveMain);
+            const cartButton = document.querySelector('.header__cart');
+            cartButton.addEventListener('click', openOrder);
         } else if (body.offsetWidth >= 1100) {
             navigation.innerHTML = createListLink();
             header__innerSocial.insertAdjacentHTML('beforeend', createSocialLink());
             header__additionalFeatures.insertAdjacentHTML('beforeend', creatAdditionalFeatures());
             document.querySelector('.header__list').addEventListener('click', linkActiveMain);
+            const cartButton = document.querySelector('.header__cart');
+            cartButton.addEventListener('click', openOrder);
         } else {
             const innerBlock = document.querySelector('.header__innerBlock');
             innerBlock.insertAdjacentHTML('afterbegin', createSocialLink());
             innerBlock.insertAdjacentHTML('afterbegin', creatAdditionalFeatures());
             document.querySelector('.header__list').addEventListener('click', linkActiveMain);
+            const cartButton = document.querySelector('.header__cart');
+            cartButton.addEventListener('click', openOrder);
         }
     }
 
@@ -258,7 +266,6 @@ const header = () => {
     listFilter.addEventListener('click', getFilter);
     hamburgerMenu.addEventListener('click', openHamburger);
     groceryCardsList.addEventListener('click', addActiveCart);
-    // cartButton.addEventListener('click', openModalIconCart);
 }
 
 export default header;
