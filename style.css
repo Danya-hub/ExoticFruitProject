@@ -107,6 +107,7 @@ img {
     height: 100%;
     right: 0;
     top: 0;
+    overflow: hidden;
     z-index: 999;
 }
 
