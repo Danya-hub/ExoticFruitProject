@@ -516,7 +516,7 @@ button {
 }
 
 .header__cartWindow-title {
-    font: 600 35px 'FuturaPTCond-BookObl';
+    font: 600 35px 'FuturaPTCond-Book';
     background: linear-gradient(to right, rgb(0, 175, 0) 10%, rgb(0, 224, 0));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
