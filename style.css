@@ -145,16 +145,16 @@ input::placeholder {
 
 .productsInCart {
     position: absolute;
+    font: 100 16px 'FuturaPT-Heavy';
+    background-color: #ffff;
     text-align: center;
     line-height: 14px;
     font-size: 10px;
-    font-weight: 800;
     border-radius: 50%;
-    bottom: 0;
-    right: -6px;
     width: 14px;
     height: 14px;
-    background-color: white;
+    bottom: 0;
+    right: -6px;
 }
 
 .header__innerBlock {
