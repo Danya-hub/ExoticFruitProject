@@ -169,11 +169,9 @@ button {
 
 /* ----------======= wrapper =======---------- */
 
-
 .wrapper {
     display: none;
     height: 400px;
-    margin: 25px auto 0;
     position: relative;
     width: 100%;
 }
@@ -187,10 +185,10 @@ button {
     height: inherit;
     overflow: hidden;
     position: relative;
+    margin: 25px auto 0 auto;
     width: 80%;
     border: 2px solid rgb(229, 186, 130, 0.6);
     border-radius: 1em;
-    margin: 0 auto;
 }
 
 .wrapper>input {
@@ -304,7 +302,6 @@ button {
     margin: 0 auto;
 }
 
-
 .groceryCards__aboutPage-text {
     margin: 40px 30px;
 }
@@ -371,10 +368,6 @@ button {
     display: block;
 }
 
-.groceryCards>div:not(.groceryCards__aboutPage):not(.wrapper) {
-    margin: 60px 0;
-}
-
 .groceryCards__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 200px));
@@ -382,7 +375,7 @@ button {
     justify-content: center;
     min-width: 320px;
     max-width: 1700px;
-    margin: 10px auto 0 auto;
+    margin: 30px auto 0 auto;
 }
 
 .groceryCards__listBerriesActive {
@@ -435,7 +428,6 @@ button {
 
 .groceryCards__list-item-button-img {
     width: 30px;
-    height: 30px;
 }
 
 .groceryCards__list-item>div+div {
@@ -452,7 +444,6 @@ button {
 
 .header__berreisStock-imgSleepingMan {
     width: 250px;
-    height: 200px;
     margin: 30px auto 0 auto;
 }
 
@@ -493,7 +484,6 @@ button {
 
 .footer__socaialNetworks-logoLink-img {
     width: 20px;
-    height: 20px;
     border-radius: 6px;
 }
 
@@ -569,7 +559,6 @@ button {
 
     .header__logoProject-img {
         width: 235px;
-        height: 60px;
     }
 
     .header__list {
@@ -630,7 +619,6 @@ button {
 
     .header__logoProject-img {
         width: 240px;
-        height: 65px;
     }
 
     .header__list {
@@ -653,13 +641,11 @@ button {
 
     .header__socialNetworks-logo-link-img {
         width: 25px;
-        height: 25px;
     }
 
     .header__additionalFeaturesBlock img,
     .header>div:nth-child(n+4) img {
         width: 50px;
-        height: 50px;
     }
 }
 
@@ -734,6 +720,7 @@ button {
         height: 100%;
         margin: 0;
         left: 0;
+        top: 37%;
         cursor: unset;
     }
 
