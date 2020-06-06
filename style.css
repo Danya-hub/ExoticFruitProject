@@ -27,6 +27,21 @@ button {
     background: unset;
 }
 
+input {
+    display: block;
+    width: 250px;
+    height: 40px;
+    border: 2px solid rgb(229, 186, 130, 0.6);
+    border-radius: 6px;
+    padding-left: 20px;
+    outline: unset;
+    margin: 10px 0;
+}
+
+input::placeholder {
+    font: 600 16px 'FuturaPT-Light';
+}
+
 /* ----------======= header =======---------- */
 
 .header {
@@ -52,6 +67,7 @@ button {
 
 .header__list-item {
     text-align: center;
+    margin: 15px 0;
 }
 
 .header__list-item a {
@@ -486,7 +502,7 @@ button {
 .modal {
     position: relative;
     background-color: beige;
-    border: 2px solid rgb(229, 186, 130, 0.6);
+    border: 2px solid rgb(229, 186, 130);
     border-radius: 1em;
     height: 300px;
     padding: 1em;
@@ -514,6 +530,7 @@ button {
     padding-top: 15px;
 }
 
+.header__modalRegistration-title,
 .header__cartWindow-title {
     font: 600 35px 'FuturaPTCond-Book';
     background: linear-gradient(to right, rgb(0, 175, 0) 10%, rgb(0, 224, 0));
@@ -523,6 +540,7 @@ button {
     margin-bottom: 10px;
 }
 
+.header__modalRegistrationButton,
 .header__getOrderButton {
     display: block;
     font: 100 20px 'FuturaPT-Medium';
@@ -533,7 +551,7 @@ button {
     height: 45px;
     border-radius: 0.7em;
     text-align: center;
-    margin: 10px auto 0 auto;
+    margin: 15px auto 0 auto;
 }
 
 .header__cartListBlock span {
@@ -544,6 +562,10 @@ button {
 .header__cartWindow span {
     font: 100 16px 'FuturaPT-Medium';
 }
+
+/* ----------======= registModal =======---------- */
+
+
 
 /* ----------======= @media =======---------- */
 
@@ -562,6 +584,10 @@ button {
         display: flex;
         justify-content: space-between;
         width: 380px;
+    }
+
+    .header__list-item {
+        margin: 0;
     }
 }
 
@@ -717,24 +743,6 @@ button {
     .groceryCards__menuBlock-listFilter-item:hover {
         background-color: rgb(228, 228, 205);
     }
-
-    /* .groceryCards__menuBlock {
-        position: sticky;
-        background-color: beige;
-        border-top: 2px solid rgb(229, 186, 130, 0.6);
-        border-bottom-left-radius: unset;
-        border-top-right-radius: 1em;
-        border-left: unset;
-        height: 100%;
-        margin: 0;
-        left: 0;
-        top: 41.5em;
-        cursor: unset;
-    } */
-
-    /* .groceryCards__menuBlock-listFilter {
-        display: unset;
-    } */
 
     .groceryCards__menuBlock-title {
         cursor: unset;

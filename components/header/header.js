@@ -206,6 +206,7 @@ const header = () => {
             document.querySelector('.header__list').addEventListener('click', linkActiveMain);
             const cartButton = document.querySelector('.header__cart');
             cartButton.addEventListener('click', openOrder);
+            document.querySelector('.header__userRegistration').addEventListener('click', modalRegistration);
         } else if (body.offsetWidth >= 1100) {
             navigation.innerHTML = createListLink();
             header__innerSocial.insertAdjacentHTML('beforeend', createSocialLink());
@@ -213,6 +214,7 @@ const header = () => {
             document.querySelector('.header__list').addEventListener('click', linkActiveMain);
             const cartButton = document.querySelector('.header__cart');
             cartButton.addEventListener('click', openOrder);
+            document.querySelector('.header__userRegistration').addEventListener('click', modalRegistration);
         } else {
             const innerBlock = document.querySelector('.header__innerBlock');
             innerBlock.insertAdjacentHTML('afterbegin', createSocialLink());

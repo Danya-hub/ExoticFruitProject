@@ -30,14 +30,14 @@ export const openOrder = () => {
     <div class="modal">
         <div class="header__cartWindow">
             <h2 class="header__cartWindow-title">Корзина</h2>
-                ${(cart.items.length === 0) ? `<p class="header__cartWindow-text">В корзине ничего нет!</p>` : ''}
-                <ul class="header__cartList">${createMarkup()}</ul>
-                <div class="header__cartListBlock">
-                    <span class="header__totalQuantity">Количество продуктов в корзине: ${cart.totalQuantity}</span>
-                    <span class="header__cartItemsPrice">Итоговая цена: ${cart.totalPrice}$</span>
-                </div>
+            ${(cart.items.length === 0) ? `<p class="header__cartWindow-text">В корзине ничего нет!</p>` : ''}
+            <ul class="header__cartList">${createMarkup()}</ul>
+            <div class="header__cartListBlock">
+                <span class="header__totalQuantity">Количество продуктов в корзине: ${cart.totalQuantity}</span>
+                <span class="header__cartItemsPrice">Итоговая цена: ${cart.totalPrice}$</span>
             </div>
-            <div class="buttonsWrapper">
+        </div>
+        <div class="buttonsWrapper">
             ${(cart.items.length > 0) ? `<button class="header__getOrderButton orderButton">Получить заказ</button>` : ''}
             <button class="header__closeButton orderButton">&#10006;</button>
         </div>
