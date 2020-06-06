@@ -169,11 +169,17 @@ button {
 
 /* ----------======= wrapper =======---------- */
 
+
 .wrapper {
+    display: none;
     height: 400px;
     margin: 25px auto 0;
     position: relative;
     width: 100%;
+}
+
+.wrapperActive {
+    display: none !important;
 }
 
 .slider {
@@ -188,10 +194,6 @@ button {
 }
 
 .wrapper>input {
-    display: none;
-}
-
-.wrapper {
     display: none;
 }
 
@@ -512,6 +514,10 @@ button {
     overflow-y: scroll;
 }
 
+.modal::-webkit-scrollbar {
+    display: none;
+}
+
 .header__cartListItem-blockInfo {
     padding: 15px 0;
     border-top: 2px solid black;
@@ -527,11 +533,15 @@ button {
 }
 
 .header__cartWindow-title {
+    font: 100 22px 'FuturaPT-Medium';
+    background: linear-gradient(to right, rgb(0, 175, 0) 10%, rgb(0, 224, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-align: center;
     margin-bottom: 10px;
 }
 
-.header__cartList-items span {
+.header__cartWindow span {
     display: block;
 }
 
@@ -546,11 +556,6 @@ button {
     font-weight: 800;
     text-transform: uppercase;
     outline: none;
-}
-
-.buttonsWrapper {
-    display: flex;
-    justify-content: space-around;
 }
 
 /* ----------======= @media =======---------- */
@@ -604,12 +609,12 @@ button {
         background: url("./components/header/assets/background/frukty-na-zanzibare.jpg")center no-repeat;
         background-size: 110%;
     }
-    
+
     .slide2 {
         background: url("./components/header/assets/background/shutterstock_632353679-1024x650.jpg") center no-repeat;
         background-size: 110%;
     }
-    
+
     .slide3 {
         background: url('./components/header/assets/background/34.jpg') center no-repeat;
         background-size: 110%;

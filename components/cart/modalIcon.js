@@ -25,8 +25,8 @@ export const openOrder = () => {
     console.log(productsInCart);
     const instance = basicLightbox.create(`
     <div class="modal">
-        <div class="header__cartWindow">
-            <h2 class="header__cartWindow-title">Корзина</h2>
+    <div class="header__cartWindow">
+    <h2 class="header__cartWindow-title">Корзина</h2>
             ${(cart.items.length === 0) ? `<p class="header__cartWindow-text">В корзине ничего нет!</p>` : ''}
             <ul class="header__cartList">${createMarkup()}</ul>
             <div class="header__cartListBlock">

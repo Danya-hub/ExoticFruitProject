@@ -43,6 +43,7 @@ const header = () => {
     const hamburgerMenuBlock = document.querySelector('.header__hamburgerMenuBlock'); //div
     const header__innerSocial = document.querySelector('.header__innerSocial'); //div
     const header__additionalFeatures = document.querySelector('.header__additionalFeatures'); //div
+    const wrapper = document.querySelector('.wrapper');
     const body = document.querySelector('body'); //body
 
     const getMarkup = (array) => {
@@ -70,12 +71,14 @@ const header = () => {
     }
     groceryCardsList.innerHTML = getMarkup(fruit);
     groceryCardsMenu.classList.add('groceryCards__menuBlockActive');
+    wrapper.classList.remove('wrapperActive');
 
     const linkActiveMain = (e) => {
         groceryCards.classList.remove('groceryCards__menuActive');
         aboutPage.classList.remove('groceryCards__aboutPageActive');
         groceryCardsMenu.classList.add('groceryCards__menuBlockActive');
         groceryCardsList.classList.remove('groceryCards__listBerriesActive');
+        wrapper.classList.remove('wrapperActive');
         if (e.target === e.currentTarget) {
             return
         } else {
@@ -105,6 +108,7 @@ const header = () => {
                 case 'about':
                     aboutPage.classList.add('groceryCards__aboutPageActive');
                     groceryCards.classList.add('groceryCards__menuActive');
+                    wrapper.classList.add('wrapperActive');
                     groceryCardsMenu.classList.remove('groceryCards__menuBlockActive');
                     groceryCardsList.innerHTML = '';
                     if (hamburgerMenuBlock) {
