@@ -505,8 +505,9 @@ button {
 }
 
 .header__cartWindow-text {
-    padding: 15px 0;
+    font: 100 18px 'FuturaPT-Medium';
     border-top: 2px solid #000;
+    padding: 15px 0;
 }
 
 .header__cartListBlock {
@@ -515,7 +516,7 @@ button {
 }
 
 .header__cartWindow-title {
-    font: 100 35px 'FuturaPTCond-Book';
+    font: 600 35px 'FuturaPTCond-BookObl';
     background: linear-gradient(to right, rgb(0, 175, 0) 10%, rgb(0, 224, 0));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -523,8 +524,13 @@ button {
     margin-bottom: 10px;
 }
 
-.header__cartWindow span {
+.header__cartListBlock span {
     display: block;
+}
+
+.header__cartListItem-blockInfo-price,
+.header__cartWindow span {
+    font: 100 18px 'FuturaPT-Medium';
 }
 
 /* ----------======= @media =======---------- */

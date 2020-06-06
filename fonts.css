@@ -17,3 +17,8 @@
     font-family: 'FuturaPTCond-Book';
     src: url(./fonts/FuturaPTCond-Book.ttf);
 }
+
+@font-face {
+    font-family: 'FuturaPTCond-BookObl';
+    src: url(./fonts/FuturaPTCond-BookObl.ttf);
+}

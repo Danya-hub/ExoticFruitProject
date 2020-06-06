@@ -10,7 +10,10 @@ const createMarkup = () => {
         <li class="header__cartListItem">
             <div class="header__cartListItem-blockInfo">
                 <span class="header__cartListItem-blockInfo-text">Название продукта: ${item.title}</span>
-                <span class="header__cartListItem-blockInfo-price">Цена: ${item.price} ${item.stock ? item.stock : ''}${item.stock ? (((item.category === 'fruit') || (item.category === 'fruitSet'))?'$/pcs':'$/kg') : ''}</span>
+                <p class="header__cartListItem-blockInfo-price">Цена:
+                    <span class=${item.stock ? "groceryCards__list-item-priceThrough" : "groceryCards__list-item-price"}>${item.price}$/${((item.category === 'fruit') || (item.category === 'fruitSet'))?'pcs':'kg'}</span>
+                    <span class="groceryCards__list-item-stock-span">${item.stock ? item.stock : ''}${item.stock ? (((item.category === 'fruit') || (item.category === 'fruitSet'))?'$/pcs':'$/kg') : ''}</span>
+                </p>
             </div>
         </li>
         `
