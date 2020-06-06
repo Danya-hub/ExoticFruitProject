@@ -28,23 +28,23 @@ export const openOrder = () => {
     console.log(productsInCart);
     const instance = basicLightbox.create(`
     <div class="modal">
-    <div class="header__cartWindow">
-    <h2 class="header__cartWindow-title">Корзина</h2>
-            ${(cart.items.length === 0) ? `<p class="header__cartWindow-text">В корзине ничего нет!</p>` : ''}
-            <ul class="header__cartList">${createMarkup()}</ul>
-            <div class="header__cartListBlock">
-                <span class="header__totalQuantity">Количество продуктов в корзине: ${cart.totalQuantity}</span>
-                <span class="header__cartItemsPrice">Итоговая цена: ${cart.totalPrice}$</span>
+        <div class="header__cartWindow">
+            <h2 class="header__cartWindow-title">Корзина</h2>
+                ${(cart.items.length === 0) ? `<p class="header__cartWindow-text">В корзине ничего нет!</p>` : ''}
+                <ul class="header__cartList">${createMarkup()}</ul>
+                <div class="header__cartListBlock">
+                    <span class="header__totalQuantity">Количество продуктов в корзине: ${cart.totalQuantity}</span>
+                    <span class="header__cartItemsPrice">Итоговая цена: ${cart.totalPrice}$</span>
+                </div>
             </div>
-        </div>
-        <div class="buttonsWrapper">
-        ${(cart.items.length > 0) ? `<button class="orderButton">Get order</button>` : ''}
-        <button class="closeButton orderButton">&#10006;</button>
+            <div class="buttonsWrapper">
+            ${(cart.items.length > 0) ? `<button class="header__getOrderButton orderButton">Получить заказ</button>` : ''}
+            <button class="header__closeButton orderButton">&#10006;</button>
         </div>
     </div>
 `, {
         onShow: (instance) => {
-            instance.element().querySelector('.closeButton').onclick = instance.close;
+            instance.element().querySelector('.header__closeButton').onclick = instance.close;
         }
     })
 

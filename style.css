@@ -91,7 +91,7 @@ button {
     display: block;
 }
 
-.orderButton,
+.header__closeButton,
 .header__hamburgerMenuBlock-buttonClose {
     position: absolute;
     color: rgb(229, 186, 130);
@@ -174,7 +174,7 @@ button {
     height: inherit;
     overflow: hidden;
     position: relative;
-    margin: 25px auto 0 auto;
+    margin: 45px auto 0 auto;
     width: 80%;
     border: 2px solid rgb(229, 186, 130, 0.6);
     border-radius: 1em;
@@ -504,7 +504,7 @@ button {
 }
 
 .header__cartWindow-text {
-    font: 100 18px 'FuturaPT-Medium';
+    font: 100 16px 'FuturaPT-Medium';
     border-top: 2px solid #000;
     padding: 15px 0;
 }
@@ -523,13 +523,26 @@ button {
     margin-bottom: 10px;
 }
 
+.header__getOrderButton {
+    display: block;
+    font: 100 20px 'FuturaPT-Medium';
+    color: rgb(229, 186, 130);
+    background-color: rgba(236, 219, 197, 0.6);
+    border: 2px solid rgb(229, 186, 130, 0.6);
+    width: 150px;
+    height: 45px;
+    border-radius: 0.7em;
+    text-align: center;
+    margin: 10px auto 0 auto;
+}
+
 .header__cartListBlock span {
     display: block;
 }
 
 .header__cartListItem-blockInfo-price,
 .header__cartWindow span {
-    font: 100 18px 'FuturaPT-Medium';
+    font: 100 16px 'FuturaPT-Medium';
 }
 
 /* ----------======= @media =======---------- */
@@ -705,7 +718,7 @@ button {
         background-color: rgb(228, 228, 205);
     }
 
-    .groceryCards__menuBlock {
+    /* .groceryCards__menuBlock {
         position: sticky;
         background-color: beige;
         border-top: 2px solid rgb(229, 186, 130, 0.6);
@@ -717,11 +730,11 @@ button {
         left: 0;
         top: 41.5em;
         cursor: unset;
-    }
+    } */
 
-    .groceryCards__menuBlock-listFilter {
+    /* .groceryCards__menuBlock-listFilter {
         display: unset;
-    }
+    } */
 
     .groceryCards__menuBlock-title {
         cursor: unset;

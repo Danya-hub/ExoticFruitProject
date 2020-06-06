@@ -19,6 +19,7 @@ import {
 import {
     openOrder
 } from '../cart/modalIcon.js';
+import { modalRegistration } from "../cart/modalRegistration.js";
 
 const pageInfo = {
     currentPage: 'fruit'
@@ -197,6 +198,7 @@ const header = () => {
             document.querySelector('.header__list').addEventListener('click', linkActiveMain);
             const cartButton = document.querySelector('.header__cart');
             cartButton.addEventListener('click', openOrder);
+            document.querySelector('.header__userRegistration').addEventListener('click', modalRegistration);
         } else if ((body.offsetWidth >= 768) && (body.offsetWidth < 1100)) {
             navigation.innerHTML = createListLink();
             innerBlock.insertAdjacentHTML('afterbegin', createSocialLink());
