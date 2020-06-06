@@ -167,6 +167,124 @@ button {
     height: 40px;
 }
 
+/* ----------======= wrapper =======---------- */
+
+.wrapper {
+    height: 400px;
+    margin: 25px auto 0;
+    position: relative;
+    width: 100%;
+}
+
+.slider {
+    background-color: beige;
+    height: inherit;
+    overflow: hidden;
+    position: relative;
+    width: 80%;
+    border: 2px solid rgb(229, 186, 130, 0.6);
+    border-radius: 1em;
+    margin: 0 auto;
+}
+
+.wrapper>input {
+    display: none;
+}
+
+.wrapper {
+    display: none;
+}
+
+.wrapper .controls {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 80px;
+    left: 0;
+    right: 0;
+    bottom: -2em;
+    margin: auto;
+}
+
+.wrapper label {
+    cursor: pointer;
+    display: inline-block;
+    height: 8px;
+    position: relative;
+    width: 8px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.wrapper label:after {
+    border: 2px solid rgb(229, 186, 130, 0.6);
+    /* color outside */
+    content: " ";
+    display: block;
+    height: 12px;
+    left: -4px;
+    position: absolute;
+    top: -4px;
+    width: 12px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.wrapper label {
+    cursor: pointer;
+    display: inline-block;
+    height: 8px;
+    position: relative;
+    width: 8px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-transition: background ease-in-out .5s;
+    -moz-transition: background ease-in-out .5s;
+    -o-transition: background ease-in-out .5s;
+    transition: background ease-in-out .5s;
+}
+
+.wrapper label:hover,
+#slide1:checked~.controls label:nth-of-type(1),
+#slide2:checked~.controls label:nth-of-type(2),
+#slide3:checked~.controls label:nth-of-type(3) {
+    background: rgba(236, 205, 163, 0.6);
+    /* color inside */
+}
+
+.slides {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 0;
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    transform: scale(1.5);
+    -webkit-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+    -moz-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+    -o-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+    transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+}
+
+#slide1:checked~.slider>.slide1,
+#slide2:checked~.slider>.slide2,
+#slide3:checked~.slider>.slide3 {
+    opacity: 1;
+    z-index: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
+
 /* ----------======= groceryCards =======---------- */
 
 .groceryCards__aboutPage {
@@ -251,7 +369,7 @@ button {
     display: block;
 }
 
-.groceryCards>div:not(.groceryCards__aboutPage) {
+.groceryCards>div:not(.groceryCards__aboutPage):not(.wrapper) {
     margin: 60px 0;
 }
 
@@ -262,7 +380,7 @@ button {
     justify-content: center;
     min-width: 320px;
     max-width: 1700px;
-    margin: 0 auto;
+    margin: 10px auto 0 auto;
 }
 
 .groceryCards__listBerriesActive {
@@ -385,21 +503,36 @@ button {
 /* ----------======= cartModal =======---------- */
 
 .modal {
-    background-color: white;
-    padding: 5px;
-    border-radius: 5px;
+    background-color: beige;
+    border: 2px solid rgb(229, 186, 130, 0.6);
+    border-radius: 1em;
+    height: 300px;
+    padding: 1em;
+    margin: 0 1em;
+    overflow-y: scroll;
 }
 
-.cartList {
-    list-style: none;
-    width: 100%;
-    border-bottom: 2px solid black;
+.header__cartListItem-blockInfo {
+    padding: 15px 0;
+    border-top: 2px solid black;
+}
+
+.header__cartWindow-text {
+    padding-bottom: 15px;
+}
+
+.header__cartListBlock {
+    border-top: 2px solid black;
+    padding-top: 15px;
+}
+
+.header__cartWindow-title {
+    text-align: center;
     margin-bottom: 10px;
-    padding-bottom: 10px;
 }
 
-.cartListItem {
-    margin: 3px 0;
+.header__cartList-items span {
+    display: block;
 }
 
 .orderButton {
@@ -418,7 +551,6 @@ button {
 .buttonsWrapper {
     display: flex;
     justify-content: space-around;
-
 }
 
 /* ----------======= @media =======---------- */
@@ -462,6 +594,25 @@ button {
 
     .header__hamburgerMenu-button {
         display: none;
+    }
+
+    .wrapper {
+        display: block;
+    }
+
+    .slide1 {
+        background: url("./components/header/assets/background/frukty-na-zanzibare.jpg")center no-repeat;
+        background-size: 110%;
+    }
+    
+    .slide2 {
+        background: url("./components/header/assets/background/shutterstock_632353679-1024x650.jpg") center no-repeat;
+        background-size: 110%;
+    }
+    
+    .slide3 {
+        background: url('./components/header/assets/background/34.jpg') center no-repeat;
+        background-size: 110%;
     }
 }
 
@@ -554,7 +705,7 @@ button {
         position: unset;
     }
 
-    .groceryCards>div:not(.groceryCards__aboutPage) {
+    .groceryCards>div:not(.groceryCards__aboutPage):not(.wrapper) {
         display: flex;
         justify-content: space-between;
         margin: 30px 0;

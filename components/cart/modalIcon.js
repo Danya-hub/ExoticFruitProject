@@ -1,15 +1,17 @@
-import { cart } from './cart.js';
+import {
+    cart
+} from './cart.js';
 
 const createMarkup = () => {
     let markup = '';
     let number = 1;
     for (const item of cart.items) {
         markup += `
-        <li class="cartListItem">
-        <div class="cartItemsFlex">
-            <span>${number}. <b>Title:</b> ${item.title}</span>
-            <span><b>Price:</b> ${item.price} UAH</span>
-        </div>
+        <li class="header__cartListItem">
+            <div class="header__cartListItem-blockInfo">
+                <span class="header__cartListItem-blockInfo-text">Название продукта: ${item.title}</span>
+                <span class="header__cartListItem-blockInfo-price">Цена: ${item.price} ${item.stock ? item.stock : ''}${item.stock ? (((item.category === 'fruit') || (item.category === 'fruitSet'))?'$/pcs':'$/kg') : ''}</span>
+            </div>
         </li>
         `
         number += 1;
@@ -23,13 +25,13 @@ export const openOrder = () => {
     console.log(productsInCart);
     const instance = basicLightbox.create(`
     <div class="modal">
-        <div class="cartWindow">
-            <h2>Product in cart</h2>
-            ${(cart.items.length === 0) ? `<p>No products in cart</p>` : ''}
-            <ul class="cartList">${createMarkup()}</ul>
-            <div class="cartItemsFlex">
-                <span><b>All products in cart:</b> ${cart.totalQuantity}</span>
-                <span class="cartItemsPrice"><b>Total price:</b> ${cart.totalPrice} UAH</span>
+        <div class="header__cartWindow">
+            <h2 class="header__cartWindow-title">Корзина</h2>
+            ${(cart.items.length === 0) ? `<p class="header__cartWindow-text">В корзине ничего нет!</p>` : ''}
+            <ul class="header__cartList">${createMarkup()}</ul>
+            <div class="header__cartListBlock">
+                <span class="header__totalQuantity">Количество продуктов в корзине: ${cart.totalQuantity}</span>
+                <span class="header__cartItemsPrice">Итоговая цена: ${cart.totalPrice}</span>
             </div>
         </div>
         <div class="buttonsWrapper">
@@ -39,7 +41,7 @@ export const openOrder = () => {
     </div>
 `, {
         onShow: (instance) => {
-            instance.element().querySelector('.closeButton').onclick = instance.close
+            instance.element().querySelector('.closeButton').onclick = instance.close;
         }
     })
 

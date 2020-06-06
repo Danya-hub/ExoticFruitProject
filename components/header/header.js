@@ -41,8 +41,6 @@ const header = () => {
     const menuBlockTitle = document.querySelector('.groceryCards__menuBlock-title'); //h2
     const hamburgerMenu = document.querySelector('.header__hamburgerMenu-button'); //button
     const hamburgerMenuBlock = document.querySelector('.header__hamburgerMenuBlock'); //div
-    const cartButton = document.querySelector('.header__cart-button'); //button
-    const modalIconCartBlock = document.querySelector('.header__modalIconCartBlock'); //div
     const header__innerSocial = document.querySelector('.header__innerSocial'); //div
     const header__additionalFeatures = document.querySelector('.header__additionalFeatures'); //div
     const body = document.querySelector('body'); //body
@@ -189,7 +187,6 @@ const header = () => {
         const innerBlock = document.querySelector('.header__innerBlock');
         const navigation = document.querySelector('.navigation');
         if ((body.offsetWidth >= 320) && (body.offsetWidth < 768)) {
-            console.log(createListLink());
             innerBlock.insertAdjacentHTML('afterbegin', createSocialLink());
             innerBlock.insertAdjacentHTML('beforeend', createListLink());
             innerBlock.insertAdjacentHTML('beforeend', creatAdditionalFeatures());
