@@ -62,17 +62,6 @@ button {
     -webkit-text-fill-color: transparent;
 }
 
-.header__list-item a:hover,
-.header__list-item a:focus {
-    border-bottom: 2px solid;
-    background: linear-gradient(to right, rgb(255, 94, 0) 40%, rgb(255, 209, 7));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    border-image-source: linear-gradient(to right, rgb(255, 94, 0) 40%, rgb(255, 209, 7));
-    border-image-slice: 1;
-    padding-bottom: 42px;
-}
-
 .header__socialNetworks-logo-link-img {
     width: 20px;
     height: 20px;
@@ -103,6 +92,7 @@ button {
     display: block;
 }
 
+.orderButton,
 .header__hamburgerMenuBlock-buttonClose {
     position: absolute;
     color: rgb(229, 186, 130);
@@ -375,7 +365,7 @@ button {
     justify-content: center;
     min-width: 320px;
     max-width: 1700px;
-    margin: 30px auto 0 auto;
+    margin: 60px auto 0 auto;
 }
 
 .groceryCards__listBerriesActive {
@@ -495,6 +485,7 @@ button {
 /* ----------======= cartModal =======---------- */
 
 .modal {
+    position: relative;
     background-color: beige;
     border: 2px solid rgb(229, 186, 130, 0.6);
     border-radius: 1em;
@@ -514,7 +505,8 @@ button {
 }
 
 .header__cartWindow-text {
-    padding-bottom: 15px;
+    padding: 15px 0;
+    border-top: 2px solid #000;
 }
 
 .header__cartListBlock {
@@ -523,7 +515,7 @@ button {
 }
 
 .header__cartWindow-title {
-    font: 100 22px 'FuturaPT-Medium';
+    font: 100 35px 'FuturaPTCond-Book';
     background: linear-gradient(to right, rgb(0, 175, 0) 10%, rgb(0, 224, 0));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -533,19 +525,6 @@ button {
 
 .header__cartWindow span {
     display: block;
-}
-
-.orderButton {
-    margin-top: 10px;
-    width: 120px;
-    color: white;
-    background-color: cornflowerblue;
-    border: none;
-    border-radius: 4px;
-    padding: 5px;
-    font-weight: 800;
-    text-transform: uppercase;
-    outline: none;
 }
 
 /* ----------======= @media =======---------- */
@@ -571,6 +550,17 @@ button {
 @media (min-width: 1100px) {
 
     /*2*/
+    .header__list-item a:hover,
+    .header__list-item a:focus {
+        border-bottom: 2px solid;
+        background: linear-gradient(to right, rgb(255, 94, 0) 40%, rgb(255, 209, 7));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        border-image-source: linear-gradient(to right, rgb(255, 94, 0) 40%, rgb(255, 209, 7));
+        border-image-slice: 1;
+        padding-bottom: 42px;
+    }
+
     .header__socialNetworks,
     .header>div:not(.header__logo):not(.header__hamburgerMenuBlock) {
         display: flex;
@@ -595,12 +585,12 @@ button {
     }
 
     .slide1 {
-        background: url("./components/header/assets/background/frukty-na-zanzibare.jpg")center no-repeat;
+        background: url("./components/header/assets/background/shutterstock_632353679-1024x650.jpg") center no-repeat;
         background-size: 110%;
     }
 
     .slide2 {
-        background: url("./components/header/assets/background/shutterstock_632353679-1024x650.jpg") center no-repeat;
+        background: url("./components/header/assets/background/frukty-na-zanzibare.jpg") center no-repeat;
         background-size: 110%;
     }
 
@@ -720,7 +710,7 @@ button {
         height: 100%;
         margin: 0;
         left: 0;
-        top: 37%;
+        top: 41.5em;
         cursor: unset;
     }
 

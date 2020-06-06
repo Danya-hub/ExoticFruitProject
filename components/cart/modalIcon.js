@@ -31,12 +31,12 @@ export const openOrder = () => {
             <ul class="header__cartList">${createMarkup()}</ul>
             <div class="header__cartListBlock">
                 <span class="header__totalQuantity">Количество продуктов в корзине: ${cart.totalQuantity}</span>
-                <span class="header__cartItemsPrice">Итоговая цена: ${cart.totalPrice}</span>
+                <span class="header__cartItemsPrice">Итоговая цена: ${cart.totalPrice}$</span>
             </div>
         </div>
         <div class="buttonsWrapper">
-            ${(cart.items.length > 0) ? `<button class="orderButton">Get order</button>` : ''}
-            <button class="closeButton orderButton">Close</button>
+        ${(cart.items.length > 0) ? `<button class="orderButton">Get order</button>` : ''}
+        <button class="closeButton orderButton">&#10006;</button>
         </div>
     </div>
 `, {
