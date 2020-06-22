@@ -26,5 +26,4 @@ export const modalRegistration = () => {
 
     const orderButton = document.querySelector('.orderButton');
     orderButton.addEventListener('click', register)
-
 }

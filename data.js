@@ -230,7 +230,7 @@ export const fruit = [{ //1
         price: 3.47
     },
     { //33
-        id: 33,
+        id: '33',
         category: 'fruit',
         photoProduct: './components/header/assets/fruits/Cupuacu.jpg',
         title: 'Купуасу (Cupuacu)',
